@@ -46,6 +46,7 @@ function SignupFormPage() {
         </ul>
         <label>
           Email
+          <br />
           <input
             type="text"
             value={email}
@@ -53,8 +54,10 @@ function SignupFormPage() {
             required
           />
         </label>
+        <br />
         <label>
           First Name
+          <br />
           <input
             type="text"
             value={firstName}
@@ -62,8 +65,10 @@ function SignupFormPage() {
             required
           />
         </label>
+        <br />
         <label>
           Last Name Initial
+          <br />
           <input
             type="text"
             value={lastNameInitial}
@@ -71,8 +76,10 @@ function SignupFormPage() {
             required
           />
         </label>
+        <br />
         <label>
           Password
+          <br />
           <input
             type="password"
             value={password}
@@ -80,8 +87,10 @@ function SignupFormPage() {
             required
           />
         </label>
+        <br />
         <label>
           Confirm Password
+          <br />
           <input
             type="password"
             value={confirmPassword}
@@ -89,6 +98,7 @@ function SignupFormPage() {
             required
           />
         </label>
+        <br />
         <button type="submit">Sign Up</button>
       </form>
     </>
