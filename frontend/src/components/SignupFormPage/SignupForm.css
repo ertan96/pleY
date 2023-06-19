@@ -1,0 +1,25 @@
+.first-name-text input {
+    border: 1px solid rgb(145, 140, 140);
+    padding: 5px 9px;
+    width: 127px;
+    margin-bottom: 9px;
+    border-radius: 3px;
+    margin-right: 3px;
+}
+
+.last-name-text input {
+    border: 1px solid rgb(145, 140, 140);
+    padding: 5px 9px;
+    width: 127px;
+    margin-bottom: 9px;
+    border-radius: 3px;
+    margin-left: 3px;
+}
+
+.confirm-password-text input {
+    border: 1px solid rgb(145, 140, 140);
+    padding: 5px 9px;
+    width: 280px;
+    margin-bottom: 9px;
+    border-radius: 3px;
+}

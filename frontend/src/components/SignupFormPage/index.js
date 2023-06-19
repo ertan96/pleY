@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -50,8 +50,27 @@ function SignupFormPage() {
           <ul className='login-errors'>
             {errors.map((error) => <li key={error}>{error}</li>)}
           </ul>
-          <label>
-            <br />
+          <div>
+            <label className='first-name-text'>
+              <input
+                type="text"
+                placeholder = 'First Name'
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+            </label>
+            <label className='last-name-text'>
+              <input
+                type="text"
+                placeholder =' Last Name Initial'
+                value={lastNameInitial}
+                onChange={(e) => setLastNameInitial(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <label className='email-text'>
             <input
               type="text"
               placeholder ='Email'
@@ -60,30 +79,7 @@ function SignupFormPage() {
               required
             />
           </label>
-          <br />
-          <label>
-            <br />
-            <input
-              type="text"
-              placeholder = 'First Name'
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            <br />
-            <input
-              type="text"
-              placeholder =' Last Name Initial'
-              value={lastNameInitial}
-              onChange={(e) => setLastNameInitial(e.target.value)}
-              required
-            />
-          </label>
-          <br />
-          <label>
+          <label className='password-text'>
             <br />
             <input
               type="password"
@@ -93,8 +89,7 @@ function SignupFormPage() {
               required
             />
           </label>
-          <br />
-          <label>
+          <label className='confirm-password-text'>
             <br />
             <input
               type="password"
@@ -105,7 +100,10 @@ function SignupFormPage() {
             />
           </label>
           <br />
-          <button type="submit">Sign Up</button>
+          <button type="submit" className='login-button'>Sign Up</button>
+          <div className='sign-up'>
+            <p>Already on Yelp? <Link to='login' className='sign-up-button'>Log in</Link></p>
+          </div>
         </form>
       </div>
     </div>
