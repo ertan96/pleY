@@ -1,7 +1,3 @@
-.profile-dropdown {
-    position: absolute;
-}
-
 .nav-container {
   display: flex;
   align-items: center;
@@ -70,3 +66,47 @@
   transition: background-color 0.7s ease;
   text-decoration: none;
 }
+
+.dropdown-container {
+  position: relative;
+}
+
+.profile-button-container {
+  margin-left: auto;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 16px;
+  z-index: 10;
+}
+
+.profile-dropdown li {
+  text-align: center;
+  width: 92%;
+  padding: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-family: open-sans, helvetica;
+  font-size: 14px;
+}
+
+.profile-dropdown li:hover {
+  background-color: aqua;
+}
+
+.uncheck {
+  cursor: default;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
