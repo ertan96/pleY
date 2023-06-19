@@ -29,8 +29,9 @@ function SignupFormPage() {
         } catch {
           data = await res.text(); // Will hit this case if, e.g., server is down
         }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
+        if (data?.errors) {
+          setErrors(data.errors);
+        } else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       });
     }
@@ -38,70 +39,76 @@ function SignupFormPage() {
   };
 
   return (
-    <>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error) => <li key={error}>{error}</li>)}
-        </ul>
-        <label>
-          Email
+    <div className='login-container'>
+      <div className='login-form'>
+        <h1 className='login-header'>Sign Up for pleY</h1>
+        <h2 className='login-second-header'>Connect with great local businesses</h2>
+        <h3 className='privacy'>
+            By continuing, you agree to Yelp's <span className="terms-of-service">Terms of Service</span> and acknowledge Yelp's <span className='privacy-policy'>Privacy Policy.</span>
+          </h3>
+        <form onSubmit={handleSubmit}>
+          <ul className='login-errors'>
+            {errors.map((error) => <li key={error}>{error}</li>)}
+          </ul>
+          <label>
+            <br />
+            <input
+              type="text"
+              placeholder ='Email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
           <br />
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          First Name
+          <label>
+            <br />
+            <input
+              type="text"
+              placeholder = 'First Name'
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+          </label>
           <br />
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Last Name Initial
+          <label>
+            <br />
+            <input
+              type="text"
+              placeholder =' Last Name Initial'
+              value={lastNameInitial}
+              onChange={(e) => setLastNameInitial(e.target.value)}
+              required
+            />
+          </label>
           <br />
-          <input
-            type="text"
-            value={lastNameInitial}
-            onChange={(e) => setLastNameInitial(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Password
+          <label>
+            <br />
+            <input
+              type="password"
+              placeholder ='Password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
           <br />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Confirm Password
+          <label>
+            <br />
+            <input
+              type="password"
+              placeholder ='Confirm Password'
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </label>
           <br />
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <button type="submit">Sign Up</button>
-      </form>
-    </>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
   );
 }
 

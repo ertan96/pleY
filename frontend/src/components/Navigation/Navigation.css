@@ -1,3 +1,72 @@
 .profile-dropdown {
     position: absolute;
-  }
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  background-color: rgb(132, 8, 8);
+  padding: 24px 40px;
+}
+
+.login-signup {
+  margin-left: auto;
+  font-family: Helvetica, Arial, sans-serif;
+  
+}
+
+.nav-login-button {
+  display: inline-block;
+  padding: 10px 16px;
+  margin-right: 5px;
+  border: 2px solid white;
+  font-size:  100%; 
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: transparent; 
+  color: white;
+  transition: background-color 0.7s ease;
+  text-decoration: none;
+} 
+
+.nav-login-button:active {
+  border-color: blue;
+}
+
+.nav-login-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.nav-signup-button {
+  display: inline-block;
+  padding: 10px 16px;
+  margin-left: 5px;
+  border: 2px solid rgb(224,7,7);
+  font-size:  100%; 
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: rgb(224,7,7); 
+  color: white;
+  transition: background-color 1.5s ease;
+  text-decoration: none;
+}
+
+.nav-signup-button:hover {
+  background-color: rgba(255, 0, 0, 1);
+  color: white;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 10px 16px;
+  margin-right: 5px;
+  border: 2px solid white;
+  font-size:  100%; 
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: transparent; 
+  color: black;
+  transition: background-color 0.7s ease;
+  text-decoration: none;
+}
