@@ -32,6 +32,18 @@ ApplicationRecord.transaction do
         password: 'password'
       }) 
     end
-  
+
+    puts "Creating businesses..."
+    #Create businesses
+    10.times do
+      Business.create!({
+        name: Faker::Company.name,
+        address: Faker::Address.street_address,
+        latitude: Faker::Address.latitude,
+        longitude: Faker::Address.longitude,
+        category: Faker::Restaurant.type
+      })
+    end
+
     puts "Done!"
   end
