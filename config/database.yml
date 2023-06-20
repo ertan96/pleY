@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: pleY_production
-  username: pleY
-  password: <%= ENV["PLEY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

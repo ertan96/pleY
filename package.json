@@ -1,0 +1,25 @@
+{
+  "name": "pley",
+  "version": "1.0.0",
+  "description": "pley is a clone of yelp.",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ertan96/pleY.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ertan96/pleY/issues"
+  },
+  "homepage": "https://github.com/ertan96/pleY#readme",
+  "engines": {
+    "node": "16.19.1"
+  }
+}
