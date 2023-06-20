@@ -4,6 +4,8 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import HomepagePhoto from "./components/HomepagePhoto";
+import BusinessIndex from "./components/BusinessIndex";
+// import BusinessShowPage from "./components/BusinessShowPage";
 
 
 function App() {
@@ -11,6 +13,9 @@ function App() {
     <>
       <Navigation />
         <Switch>
+          <Route exact path="/business">
+            <BusinessIndex/>
+          </Route>
           <Route path="/login">
             <LoginFormPage />
           </Route>
