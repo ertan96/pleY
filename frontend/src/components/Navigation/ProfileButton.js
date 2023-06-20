@@ -14,14 +14,20 @@ function ProfileButton({ user }) {
   useEffect(() => {
     if (!showMenu) return;
 
-    const closeMenu = () => {
+    const closeMenu = (e) => {
+      const dropdownElement = document.querySelector(".dropdown-container");
+
+      if (dropdownElement.contains(e.target) && !e.target.classList.contains('logout-button')) {
+        return;
+      }
+
       setShowMenu(false);
     };
 
     document.addEventListener('click', closeMenu);
-  
+
     return () => document.removeEventListener("click", closeMenu);
-  }, [showMenu]);
+}, [showMenu]);
 
   const logout = (e) => {
     e.preventDefault();
@@ -39,11 +45,15 @@ function ProfileButton({ user }) {
             <li className="unclickable-item">My Collections</li>
             <li className="unclickable-item">Find Friends</li>
             <li className="unclickable-item">Account Settings</li>
-            <li className="unclickable-item">Projects</li>
-            <li className="unclickable-item">Messages</li>
-            <li>
-              <button onClick={logout} className='logout-button'>Log Out</button>
-            </li>
+            <div className='line-container'>
+              <li className="unclickable-item">Projects</li>
+              <li className="unclickable-item">Messages</li>
+            </div>
+            <div className='line-container'>
+              <li>
+                <button onClick={logout} className='logout-button'>Log Out</button>
+              </li>
+            </div>
         </ul>
       )}
     </div>

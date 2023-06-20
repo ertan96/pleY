@@ -54,7 +54,6 @@
 }
 
 .home-button {
-  display: inline-block;
   padding: 10px 16px;
   margin-right: 5px;
   border: 2px solid white;
@@ -83,6 +82,7 @@
   border: 1px solid #ccc;
   padding: 16px;
   z-index: 10;
+  border-radius: 4px;
 }
 
 .profile-dropdown li {
@@ -91,16 +91,23 @@
   padding: 8px;
   margin-right: 8px;
   cursor: pointer;
-  font-family: open-sans, helvetica;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
 .profile-dropdown li:hover {
-  background-color: aqua;
+  background-color: rgb(111, 106, 106, .2);
+  border-radius: 4px;
 }
 
 .uncheck {
-  cursor: default;
+  cursor: not-allowed;
+}
+
+.line-container {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .logout-button {
