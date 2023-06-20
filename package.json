@@ -1,7 +1,7 @@
 {
-  "name": "pleY",
+  "name": "pley",
   "version": "1.0.0",
-  "description": "pleY is a clone of yelp.",
+  "description": "pley is a clone of yelp.",
   "directories": {
     "lib": "lib"
   },
