@@ -5,7 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import HomepagePhoto from "./components/HomepagePhoto";
 import BusinessIndex from "./components/BusinessIndex";
-// import BusinessShowPage from "./components/BusinessShowPage";
+import BusinessShowPage from './components/BusinessShowPage';
 
 
 function App() {
@@ -13,7 +13,10 @@ function App() {
     <>
       <Navigation />
         <Switch>
-          <Route exact path="/business">
+          <Route path="/businesses/:id">
+            <BusinessShowPage/>
+          </Route>
+          <Route path="/businesses">
             <BusinessIndex/>
           </Route>
           <Route path="/login">

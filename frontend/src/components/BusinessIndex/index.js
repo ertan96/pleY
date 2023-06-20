@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import './BusinessIndex.css';
 
 function BusinessIndex() {
@@ -17,7 +18,9 @@ function BusinessIndex() {
             <ul>
                 {businesses.map((business) => (
                     <li key={business.id}>
-                        <h2>{business.name}</h2>
+                        <Link to={`/businesses/${business.id}`}>
+                            <h2>{business.name}</h2>
+                        </Link>
                         <p>Address: {business.address}</p>
                         <p>Category: {business.category}</p>
                     </li>

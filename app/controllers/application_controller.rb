@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
     #     elsif params.has_key?(:logout)
     #       logout!
     #     end
-      
+    
     #     if current_user
     #       render json: { user: current_user.slice('id', 'email', 'session_token') }
     #     else

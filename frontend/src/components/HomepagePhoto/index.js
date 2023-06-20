@@ -1,10 +1,13 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './HomepagePhoto.css';
 
 function HomepagePhoto() {
-    
     return (
         <div>
-            <p>test 123</p>
+            <Link to="/businesses">
+                <button>View All Businesses</button>
+            </Link>
         </div>
     );
 }
