@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import { MdLogout } from "react-icons/md";
+
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -51,7 +53,9 @@ function ProfileButton({ user }) {
             </div>
             <div className='line-container'>
               <li>
-                <button onClick={logout} className='logout-button'>Log Out</button>
+                <button onClick={logout} className='logout-button'>
+                  <MdLogout />Log Out
+                </button>
               </li>
             </div>
         </ul>
