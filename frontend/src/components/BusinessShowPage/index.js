@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './BusinessShowPage.css';
 
-const BUSINESS_HOURS = `
-Mon: 08:00 AM - 09:00 PM
-Tue: 08:00 AM - 09:00 PM
-Wed: 08:00 AM - 09:00 PM
-Thu: 08:00 AM - 09:00 PM
-Fri: 08:00 AM - 09:00 PM
-Sat: 08:00 AM - 09:00 PM
-Sun: 08:00 AM - 09:00 PM
-`;
+const BUSINESS_HOURS = [
+    { day: 'Mon', hours: '08:00 AM - 09:00 PM' },
+    { day: 'Tue', hours: '08:00 AM - 09:00 PM' },
+    { day: 'Wed', hours: '08:00 AM - 09:00 PM' },
+    { day: 'Thu', hours: '08:00 AM - 09:00 PM' },
+    { day: 'Fri', hours: '08:00 AM - 09:00 PM' },
+    { day: 'Sat', hours: '08:00 AM - 09:00 PM' },
+    { day: 'Sun', hours: '08:00 AM - 09:00 PM' },
+];
 
 function BusinessShowPage() {
     const [business, setBusiness] = useState(null);
@@ -29,10 +29,38 @@ function BusinessShowPage() {
                 <div className='business-header'>
                     <h1>{business.name}</h1>
                 </div>
-                <div className='business-location'>
-                    <h2 className=''>Location & Hours</h2>
-                    <p>Address: {business.address}</p>
-                    <pre className='business-hours'>{BUSINESS_HOURS}</pre>
+                <div className='bottom-half-component'>
+                    <div className='left-bot-half'>
+                        <div className='create-review-container'>
+                            <button className='review-button'>Write a review</button>
+                        </div>
+                        <div className='business-location'>
+                            <div className='top-location'>
+                                <h2 className='location-hours'>Location & Hours</h2>
+                                <button className='suggest-edit'>Suggest an edit</button>
+                            </div>
+                            <div className='map-time-container'>
+                                <div className='map-address-left'>
+                                    <p>{business.address}</p>
+                                </div>
+                                <div className='time-right'>
+                                    <table className='business-hours'>
+                                        <tbody>
+                                            {BUSINESS_HOURS.map((item, index) => (
+                                                <tr key={index}>
+                                                <td>{item.day}</td>
+                                                <td>{item.hours}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className ='right-bot-half'>
+                        <p>floating scrolling area</p>
+                    </div>
                 </div>
             </div>
         ) 

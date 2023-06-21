@@ -1,2 +1,15 @@
 /* TODO Add site wide styles */
 
+@font-face {
+    font-family: 'Open Sans';
+    src: url('.././fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('.././fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
