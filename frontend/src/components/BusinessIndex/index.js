@@ -14,7 +14,7 @@ function BusinessIndex() {
 
     return (
         <div className="business-list">
-            <h1>All Businesses</h1>
+            <h1>All Restaurants</h1>
             <ul>
                 {businesses.map((business) => (
                     <li key={business.id}>

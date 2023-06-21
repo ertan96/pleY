@@ -28,6 +28,7 @@ function BusinessShowPage() {
             <div className='business-page'>
                 <div className='business-header'>
                     <h1>{business.name}</h1>
+                    <p>{business.category}</p>
                 </div>
                 <div className='bottom-half-component'>
                     <div className='left-bot-half'>

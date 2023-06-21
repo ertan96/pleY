@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import HomepagePhoto from "./components/HomepagePhoto";
 import BusinessIndex from "./components/BusinessIndex";
 import BusinessShowPage from './components/BusinessShowPage';
+import FooterTags from './components/FooterTags';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Redirect to="/" />
           </Route>
         </Switch>
+        <FooterTags/>
     </>
   );
 }
