@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './BusinessShowPage.css';
+
+const BUSINESS_HOURS = `
+Mon: 08:00 AM - 09:00 PM
+Tue: 08:00 AM - 09:00 PM
+Wed: 08:00 AM - 09:00 PM
+Thu: 08:00 AM - 09:00 PM
+Fri: 08:00 AM - 09:00 PM
+Sat: 08:00 AM - 09:00 PM
+Sun: 08:00 AM - 09:00 PM
+`;
 
 function BusinessShowPage() {
     const [business, setBusiness] = useState(null);
@@ -14,12 +25,15 @@ function BusinessShowPage() {
 
     if (business) {
         return (
-            <div>
-                <h1>{business.name}</h1>
-                <p>Address: {business.address}</p>
-                <p>Latitude: {business.latitude}</p>
-                <p>Longitude: {business.longitude}</p>
-                <p>Category: {business.category}</p>
+            <div className='business-page'>
+                <div className='business-header'>
+                    <h1>{business.name}</h1>
+                </div>
+                <div className='business-location'>
+                    <h2 className=''>Location & Hours</h2>
+                    <p>Address: {business.address}</p>
+                    <pre className='business-hours'>{BUSINESS_HOURS}</pre>
+                </div>
             </div>
         ) 
     } else {
