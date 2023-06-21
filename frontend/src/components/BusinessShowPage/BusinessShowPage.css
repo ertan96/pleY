@@ -86,25 +86,41 @@
 
 .map-time-container {
     display: flex;
+    font-size: 14px;
+    margin-top: 24px;
 }
 
 .map-address-left {
     display: flex;
-    align-items: end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
     border: 1px solid black;
     width: 315px;
     height: 274px;
 }
 
+.address-line {
+    margin: 0;
+}
+
+.address-line:nth-child(1) {
+    color: rgb(2, 122, 151);
+}
+
+.address-line:nth-child(2) {
+    font-weight: bold;
+}
+
 .time-right {
     width: 329px;
     height: 224px;
+    padding-top: 15px;
+    padding-left: 30px;
 }
 
 .business-hours {
     width: inherit;
-    padding-top: 15px;
-    padding-left: 30px;
     font-family: inherit;
     font-size: 16px;
     line-height: 2;
@@ -116,7 +132,11 @@
     padding-right: 7px; 
 }
 
-
+.review-section-container {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 32px;
+    padding-top: 32px;
+}
 
 
 

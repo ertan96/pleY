@@ -41,7 +41,8 @@ function BusinessShowPage() {
                             </div>
                             <div className='map-time-container'>
                                 <div className='map-address-left'>
-                                    <p>{business.address}</p>
+                                    <p className='address-line'>{business.address}</p>
+                                    <p className='address-line'>San Francisco, CA</p>
                                 </div>
                                 <div className='time-right'>
                                     <table className='business-hours'>
@@ -57,9 +58,13 @@ function BusinessShowPage() {
                                 </div>
                             </div>
                         </div>
+                        <div className='review-section-container'>
+                            <h2>All Reviews</h2>
+                            <p>Reviews go here</p>
+                        </div>
                     </div>
                     <div className ='right-bot-half'>
-                        <p>floating scrolling area</p>
+                        <p>floating scrolling area to put some stuff here</p>
                     </div>
                 </div>
             </div>
