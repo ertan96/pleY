@@ -16,14 +16,16 @@ function BusinessIndex() {
         <div className="business-list">
             <h1>All Restaurants</h1>
             <ul>
-                {businesses.map((business) => (
-                    <li key={business.id}>
-                        <Link to={`/businesses/${business.id}`}>
-                            <h2>{business.name}</h2>
-                        </Link>
-                        <p>Address: {business.address}</p>
-                        <p>Category: {business.category}</p>
-                    </li>
+                {businesses
+                    // .sort((a, b) => a.id - b.id)
+                    .map((business) => (
+                        <li key={business.id}>
+                            <Link to={`/businesses/${business.id}`}>
+                                <h2>{business.name}</h2>
+                            </Link>
+                            <p>Address: {business.address}</p>
+                            <p>Category: {business.category}</p>
+                        </li>
                 ))}
             </ul>
         </div>

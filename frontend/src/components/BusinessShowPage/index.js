@@ -24,9 +24,17 @@ function BusinessShowPage() {
     }, [id]);
 
     if (business) {
+        const headerStyle = {
+            backgroundImage: `url(${business.photoUrl})`,
+            backgroundSize: 'contain', // this will make sure that the background image covers the whole area
+            backgroundPosition: 'center', // this centers the image in the div
+            backgroundRepeat: 'repeat'
+            // add any other styles you want
+        };
+
         return (
             <div className='business-page'>
-                <div className='business-header'>
+                <div className='business-header' style={headerStyle}>
                     <h1>{business.name}</h1>
                     <p>{business.category}</p>
                 </div>
@@ -62,9 +70,9 @@ function BusinessShowPage() {
                         <div className='review-section-container'>
                             <h2>All Reviews</h2>
                             <p>Reviews go here</p>
-                            <div>
+                            {/* <div>
                                 <img src={business.photoUrl} alt="none"/>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className ='right-bot-half'>
