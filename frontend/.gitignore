@@ -11,6 +11,9 @@
 # production
 /build
 
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
 # misc
 .DS_Store
 .env.local
@@ -24,3 +27,10 @@ yarn-debug.log*
 yarn-error.log*
 
 /public
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep

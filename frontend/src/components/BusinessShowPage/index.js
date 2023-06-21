@@ -62,6 +62,9 @@ function BusinessShowPage() {
                         <div className='review-section-container'>
                             <h2>All Reviews</h2>
                             <p>Reviews go here</p>
+                            <div>
+                                <img src={business.photoUrl} alt="none"/>
+                            </div>
                         </div>
                     </div>
                     <div className ='right-bot-half'>
