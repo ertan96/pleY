@@ -30,7 +30,7 @@ function Navigation() {
         <div className='nav-container'>
           <div className='home-button'>
             <NavLink exact to="/" className='font-logo-link'>
-              pleY <BsYelp size={30} className='homepage-logo'/>
+              pleY <BsYelp size={30} className='homepage-logo'/> 
               </NavLink>
           </div>
           {sessionLinks}
