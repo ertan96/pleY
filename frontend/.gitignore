@@ -13,6 +13,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/credentials.yml.enc
 
 # misc
 .DS_Store
@@ -34,3 +35,4 @@ yarn-error.log*
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+
