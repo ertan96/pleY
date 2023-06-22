@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import { MdLogout } from "react-icons/md";
-
+import { MdLogout } from 'react-icons/md';
+import { AiOutlineMessage, AiOutlineUserAdd } from 'react-icons/ai';
+import { RiFolder2Line } from 'react-icons/ri';
+import { FiSettings } from 'react-icons/fi';
+import { BsBookmark} from 'react-icons/bs';
+import { VscAccount } from 'react-icons/vsc';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -41,23 +45,54 @@ function ProfileButton({ user }) {
       <button onClick={openMenu} className='profile-button'>Profile</button>
       {showMenu && (
         <ul className="profile-dropdown">
-            <li className='uncheck'>{user.firstName} {user.lastNameInitial}.</li>
-            <li className='uncheck'>{user.email}</li>
-            <li className="unclickable-item">About Me</li>
-            <li className="unclickable-item">My Collections</li>
-            <li className="unclickable-item">Find Friends</li>
-            <li className="unclickable-item">Account Settings</li>
-            <div className='line-container'>
-              <li className="unclickable-item">Projects</li>
-              <li className="unclickable-item">Messages</li>
+          <li className='uncheck'>{user.firstName} {user.lastNameInitial}.</li>
+          <li className='uncheck'>{user.email}</li>
+          <li className="unclickable-item">
+            <div className="icon-wrapper">
+              <VscAccount size={24} className='icon' />
+              <span>About Me</span>
             </div>
-            <div className='line-container'>
-              <li>
-                <button onClick={logout} className='logout-button'>
-                  <MdLogout />Log Out
-                </button>
-              </li>
+          </li>
+          <li className="unclickable-item">
+            <div className="icon-wrapper">
+              <BsBookmark size={24} className='icon' />
+              <span>My Collections</span>
             </div>
+          </li>
+          <li className="unclickable-item">
+            <div className="icon-wrapper">
+              <AiOutlineUserAdd size={24} className='icon' />
+              <span>Find Friends</span>
+            </div>
+          </li>
+          <li className="unclickable-item-account">
+            <div className="icon-wrapper">
+              <FiSettings size={24} className='icon' />
+              <span>Account Settings</span>
+            </div>
+          </li>
+          <div className='line-container'>
+            <li className="unclickable-item">
+              <div className="icon-wrapper">
+                <RiFolder2Line size={24} className='icon' />
+                <span>Projects</span>
+              </div>
+            </li>
+            <li className="unclickable-item">
+              <div className="icon-wrapper">
+                <AiOutlineMessage size={24} className='icon' />
+                <span>Messages</span>
+              </div>
+            </li>
+          </div>
+          <div className='line-container'>
+            <li>
+              <button onClick={logout} className='logout-button'>
+                <MdLogout size={24}/> 
+                <span>Log Out</span>
+              </button>
+            </li>
+          </div>
         </ul>
       )}
     </div>

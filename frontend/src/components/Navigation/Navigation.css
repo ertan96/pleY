@@ -86,12 +86,11 @@
 }
 
 .profile-dropdown li {
-  text-align: center;
+  text-align: left;
   width: 92%;
   padding: 8px;
   margin-right: 8px;
   cursor: pointer;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -111,9 +110,25 @@
 }
 
 .logout-button {
+  display: flex;
+  align-items: center;
+  text-align: left;
   background: none;
   border: none;
   cursor: pointer;
   width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  gap: 10px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.unclickable-item-account span {
+  white-space: nowrap;
 }
 

@@ -1,4 +1,5 @@
 import './FooterTags.css';
+import { BsYelp } from "react-icons/bs";
 
 function FooterTags() {
 
@@ -7,7 +8,7 @@ function FooterTags() {
             <div className='footer-container'>
                 <div className='footer-contents'>
                     <div className='footer-header'>
-                        <h3 className='footer-title'>pleY</h3>
+                        <h3 className='footer-title'>pleY <BsYelp className='yelp-icon'/></h3>
                         <h4>Explore restuarants, leave reviews, view ratings, and discover new places.</h4>
                     </div>
                     <div className='footer-bottom'>
@@ -29,6 +30,9 @@ function FooterTags() {
                             <li>AWS S3</li>
                             <li>Google Maps API</li>
                         </ul>
+                    </div>
+                    <div className='copyright'>
+                        <p>Copyright &copy; 2023 <span className='bold-text'>pleY</span> <BsYelp className='yelp-icon'/>. All Rights Reserved</p>
                     </div>
                 </div>
             </div>
