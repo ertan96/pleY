@@ -132,3 +132,16 @@
   white-space: nowrap;
 }
 
+.home-button {
+  border: none;
+}
+
+.homepage-logo {
+}
+
+.font-logo-link {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+

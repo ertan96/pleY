@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
+import { BsYelp } from "react-icons/bs";
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -28,7 +29,9 @@ function Navigation() {
       <li>
         <div className='nav-container'>
           <div className='home-button'>
-            <NavLink exact to="/">pleY</NavLink>
+            <NavLink exact to="/" className='font-logo-link'>
+              pleY <BsYelp size={30} className='homepage-logo'/>
+              </NavLink>
           </div>
           {sessionLinks}
         </div>
