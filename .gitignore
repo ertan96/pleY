@@ -29,7 +29,14 @@
 /config/master.key
 /config/credentials.yml.enc
 
+/public
 
 # To add:
 .byebug_history
 .DS_Store
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
