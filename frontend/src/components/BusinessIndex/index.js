@@ -19,7 +19,7 @@ function BusinessIndex() {
             <div className='business-index-container'>
                 <ul>
                         {businesses.map((business, index) => (
-                        <Link to={`/businesses/${business.id}`} style={{textDecoration: 'none'}}>
+                        <Link key={business.id} to={`/businesses/${business.id}`} style={{textDecoration: 'none'}}>
                         <div className='business-each'>
                             <li key={business.id}>
                                 <div className='business-each-box'>
