@@ -15,4 +15,5 @@ class Business < ApplicationRecord
     validates :name, :address, :latitude, :longitude, :category, presence: true
 
     has_many_attached :photos
+    has_many :reviews, dependent: :destroy
 end
