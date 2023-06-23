@@ -1,0 +1,115 @@
+.business-index-container {
+    display: flex;
+    text-decoration: none;
+    margin-left: 50px;
+}
+
+.business-index-container * {
+    border-radius: 4px;
+}
+
+.business-each {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 24px;
+    width: 680px;
+    height: 250px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.business-each * {
+    color: black;
+}
+
+.business-each a {
+    text-decoration: none !important;
+}
+
+.business-each-box {
+    display: flex;
+}
+
+.business-photo {
+    border: 1px solid blue;
+    width: 180px;
+    height: 200px;
+}
+
+.business-info {
+    display: flex;
+    flex-direction: column;    
+    width: 430px;
+    border: 1px solid red;
+}
+
+.review-preview-container{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid orange;
+    height: 10vh;
+    width: auto;
+}
+
+.text-icon {
+    border: 1px solid green;
+    margin-right: 5px;
+}
+
+.review-preview-text {
+    font-size: 14px;
+    max-width: 400px;
+    text-decoration: none;
+}
+
+.business-header-font {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Rubik',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    text-decoration-style: solid;
+    filter: contrast(200%);
+    margin-bottom: 5px;
+}
+
+.ratings-row {
+    margin-bottom: 5px;
+}
+
+.dollar-row {
+    font-size: 14px;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.category-font:hover {
+    cursor: pointer;
+}
+
+.open-row {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.category-font {
+    font-size: 12px;
+    padding: 4px;
+    border: none;
+}
+
+.category-font:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+.name-hover:hover {
+    text-decoration: underline;
+}
+
+.more-text {
+    color: rgb(2, 122, 151);
+}
+
+.more-text:hover {
+    text-decoration: underline;
+}
