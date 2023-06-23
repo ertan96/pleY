@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './BusinessShowPage.css';
+import { BsFillCheckCircleFill } from 'react-icons/bs';
 
 const BUSINESS_HOURS = [
     { day: 'Mon', hours: '08:00 AM - 09:00 PM' },
@@ -35,8 +36,30 @@ function BusinessShowPage() {
         return (
             <div className='business-page'>
                 <div className='business-header' style={headerStyle}>
-                    <h1>{business.name}</h1>
-                    <p>{business.category}</p>
+                    <div className='business-header-content'>
+                        <h1>{business.name}</h1>
+                        <h2 className='business-review-header'>Reviews go here 324 Reviews</h2>
+                        <h2 className='claimed-row'>
+                            <span className='claimed-style'>
+                                <BsFillCheckCircleFill /> Claimed  
+                            </span>
+                            <span className='bullet-point'> &bull; </span>
+                            $$ 
+                            <span className='bullet-point'> &bull; </span>
+                            {business.category}
+                        </h2>
+                        <h3 className='store-hour-row'>
+                            <span className='green-open'>Open</span>
+                            8:00 AM - 9:00 PM
+                        </h3>
+                    </div>
+                    <div className='business-photo-row'>
+                        {business.photosUrls && business.photosUrls.map((url, index) => (
+                            <div key={index} className='business-photo-item'>
+                                <img src={url} alt="business-photo" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 <div className='bottom-half-component'>
                     <div className='left-bot-half'>
@@ -70,6 +93,7 @@ function BusinessShowPage() {
                         <div className='review-section-container'>
                             <h2>All Reviews</h2>
                             <p>Reviews go here</p>
+                            
                             {/* <div>
                                 <img src={business.photoUrl} alt="none"/>
                             </div> */}

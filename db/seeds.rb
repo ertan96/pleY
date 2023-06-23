@@ -15,6 +15,7 @@ Business.destroy_all
 puts "Resetting primary keys..."
 # For easy testing, so that after seeding, the first `User` has `id` of 1
 ApplicationRecord.connection.reset_pk_sequence!('users')
+ApplicationRecord.connection.reset_pk_sequence!('businesses')
 
 puts "Creating users..."
 
@@ -29,7 +30,7 @@ puts "Created user!"
 
 puts "Creating Japanese Businesses..."
 #Create businesses
-Business.create!({
+sushi_go_crazy = Business.create!({
   name: 'Sushi Go Crazy', 
   address: '123 Main St.',
   latitude: '37.791994', 
@@ -103,29 +104,25 @@ Business.create!({
   category: 'Vietnamese'
 })
 
+puts "Attaching AWS images..."
 
+aws_image_urls = [
+  'https://pley1-seeds.s3.us-west-1.amazonaws.com/sushi1.jpeg',
+  'https://pley1-seeds.s3.us-west-1.amazonaws.com/sushi2.jpg',
+  'https://pley1-seeds.s3.us-west-1.amazonaws.com/sushi3.jpeg',
+]
 
-# puts "Attaching AWS images..."
-
-# aws_image_urls = [
-#   'https://pley1-seeds.s3.us-west-1.amazonaws.com/sushi1.jpeg',
-#   'https://pley1-seeds.s3.us-west-1.amazonaws.com/sushi2.jpg',
-#   'https://pley1-seeds.s3.us-west-1.amazonaws.com/sushi3.jpeg',
-# ]
-
-# res_1 = Business.find_by(id: '1')
-
-# if res_1.present?
-#   aws_image_urls.each_with_index do |image_url, index|
-#     res_1.photo.attach(
-#       io: URI.open(image_url),
-#       filename: "sushi#{index + 1}.#{image_url.split('.').last}"
-#     )
-#   end
-#   puts "AWS image successful"
-# else
-#   puts "Could not find business"
-# end
+if sushi_go_crazy.present?
+  aws_image_urls.each_with_index do |image_url, index|
+    sushi_go_crazy.photos.attach(
+      io: URI.open(image_url),
+      filename: "sushi#{index + 1}.#{image_url.split('.').last}"
+    )
+  end
+  puts "AWS image successful"
+else
+  puts "Could not find business"
+end
 
 # 9.times do
 #   Business.create!({

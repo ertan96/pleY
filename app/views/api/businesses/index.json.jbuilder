@@ -1,9 +1,8 @@
 json.array! @businesses do |business|
     json.extract! business, :id, :name, :address, :latitude, :longitude, :category, :created_at, :updated_at
-    if business.photo.attached?
-        json.photoUrl url_for(business.photo)
-        # json.photoUrl business.photo.url
+    if business.photos.attached?
+        json.photosUrls business.photos.map { |photo| url_for(photo) } 
     else
-        json.photoUrl ""
+        json.photosUrls []
     end
 end
