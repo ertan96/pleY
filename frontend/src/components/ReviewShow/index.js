@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteReview } from '../../store/reviews';
 import { Link } from 'react-router-dom';
+import { BsThreeDots, BsPersonCircle } from 'react-icons/bs';
+import { StarRating } from '../StarRating';
 
 function ReviewShow({ id }) {
     const dispatch = useDispatch();
+    const user = useSelector(state => state.session.user);
+    const [showMenu, setShowMenu] = useState(false);
+
+    const openMenu = () => {
+        if (showMenu) return;
+        setShowMenu(true);
+    };
+
+    useEffect(() => {
+        if (!showMenu) return;
+
+        const closeMenu = (e) => {
+            const dropdownElement = document.querySelector(".edit-dropdown-container");
+
+            if (dropdownElement && !dropdownElement.contains(e.target)) {
+                setShowMenu(false);
+            }
+
+            setShowMenu(false);
+        };
+
+        document.addEventListener('click', closeMenu);
+        return () => document.removeEventListener("click", closeMenu);
+    }, [showMenu]);
+
 
     const reviews = useSelector((state) => {
         const reviewsObj = state.reviews;
@@ -24,16 +51,29 @@ function ReviewShow({ id }) {
 
     return (
         <div>
-        {reviews &&
-            reviews.map((review, index) => (
-            <div key={index}>
-                <h3>Rating: {review.rating}</h3>
-                <p>{review.body}</p>
-                <button onClick={() => handleDelete(review.id)}>Delete Review</button>
-                <button>
-                    <Link to={`/reviews/edit/${review.id}`}>Edit Review</Link>
-                </button>
-            </div>
+            
+            {reviews && reviews.map((review, index) => (
+                <div key={index}>
+                    <h2><BsPersonCircle/>{user.firstName} {user.lastNameInitial}.</h2>
+                    <h3>Rating: <StarRating rating={review.rating} /> </h3>
+                    <p>Review date: {new Date(review.created_at).toLocaleDateString()}</p>
+                    <p>{review.body}</p>
+                    { user && user.id === review.user_id && (
+                        <div className='edit-dropdown-container'>
+                            <button onClick={openMenu}><BsThreeDots/></button>
+                            {showMenu && (
+                                <ul className="edit-dropdown">
+                                    <li>
+                                        <Link to={`/reviews/edit/${review.id}`}>Edit Review</Link>
+                                    </li>
+                                    <li>
+                                        <button onClick={() => handleDelete(review.id)}>Delete Review</button>
+                                    </li>
+                                </ul>
+                            )}
+                        </div>
+                    )}
+                </div>
             ))}
         </div>
     );

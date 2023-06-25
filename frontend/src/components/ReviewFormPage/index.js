@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createReview, updateReview, fetchReview } from '../../store/reviews';
 import { useParams } from 'react-router-dom';
+import { StarInput } from '../StarRating';
 
 function ReviewFormPage({ history }) {
     const dispatch = useDispatch();
@@ -60,10 +61,9 @@ function ReviewFormPage({ history }) {
         <div>
             <form onSubmit={handleSubmit}>
                 <label>Rating:
-                    <input
-                        type="number"
-                        value={rating}
-                        onChange={(e) => setRating(e.target.value)}
+                    <StarInput
+                        rating={rating}
+                        setRating={setRating}
                     />
                 </label>
                 <label>Review:

@@ -5,7 +5,7 @@ import { MdLogout } from 'react-icons/md';
 import { AiOutlineMessage, AiOutlineUserAdd } from 'react-icons/ai';
 import { RiFolder2Line } from 'react-icons/ri';
 import { FiSettings } from 'react-icons/fi';
-import { BsBookmark} from 'react-icons/bs';
+import { BsBookmark, BsPersonCircle} from 'react-icons/bs';
 import { VscAccount } from 'react-icons/vsc';
 
 function ProfileButton({ user }) {
@@ -42,11 +42,11 @@ function ProfileButton({ user }) {
 
   return (
     <div className='dropdown-container'>
-      <button onClick={openMenu} className='profile-button'>Profile</button>
+      <button onClick={openMenu} className='profile-button'><BsPersonCircle/></button>
       {showMenu && (
         <ul className="profile-dropdown">
           <li className='uncheck'>{user.firstName} {user.lastNameInitial}.</li>
-          <li className='uncheck'>{user.email}</li>
+          {/* <li className='uncheck'>{user.email}</li> */}
           <li className="unclickable-item">
             <div className="icon-wrapper">
               <VscAccount size={24} className='icon' />

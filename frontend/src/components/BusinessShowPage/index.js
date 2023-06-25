@@ -31,10 +31,9 @@ function BusinessShowPage() {
     if (business) {
         const headerStyle = {
             backgroundImage: `url(${business.photoUrl})`,
-            backgroundSize: 'contain', // this will make sure that the background image covers the whole area
-            backgroundPosition: 'center', // this centers the image in the div
+            backgroundSize: 'contain', 
+            backgroundPosition: 'center', 
             backgroundRepeat: 'repeat'
-            // add any other styles you want
         };
 
         return (
