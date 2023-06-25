@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './BusinessShowPage.css';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBusiness, getBusiness } from '../../store/businesses';
+
 
 const BUSINESS_HOURS = [
     { day: 'Mon', hours: '08:00 AM - 09:00 PM' },
@@ -14,15 +17,13 @@ const BUSINESS_HOURS = [
 ];
 
 function BusinessShowPage() {
-    const [business, setBusiness] = useState(null);
+    const dispatch = useDispatch();
     const { id } = useParams();
+    const business = useSelector(state => state.businesses[id]);
 
     useEffect(() => {
-        fetch(`/api/businesses/${id}`)
-            .then(response => response.json())
-            .then(data => setBusiness(data))
-            .catch(error => console.error('Error fetching business:', error));
-    }, [id]);
+        dispatch(fetchBusiness(id));
+    }, [dispatch, id]);
 
     if (business) {
         const headerStyle = {
@@ -56,7 +57,7 @@ function BusinessShowPage() {
                     <div className='business-photo-row'>
                         {business.photosUrls && business.photosUrls.map((url, index) => (
                             <div key={index} className='business-photo-item'>
-                                <img src={url} alt="business-photo" />
+                                <img src={url} alt="business" />
                             </div>
                         ))}
                     </div>

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBusinesses, getBusinesses } from '../../store/businesses';
 import {Link} from 'react-router-dom';
 import './BusinessIndex.css';
 import { BiMessage } from 'react-icons/bi'
 
 function BusinessIndex() {
-    const [businesses, setBusinesses] = useState([]);
+    const dispatch = useDispatch();
+    const businesses = useSelector(getBusinesses);
 
     useEffect(() => {
-        fetch('/api/businesses')
-            .then(response => response.json())
-            .then(data => setBusinesses(data))
-            .catch(error => console.error('Error fetching businesses:', error));
-    }, []);
+        dispatch(fetchBusinesses());
+    }, [dispatch]);
 
     return (
         <div className="business-list">
