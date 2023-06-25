@@ -7,6 +7,7 @@ import HomepagePhoto from "./components/HomepagePhoto";
 import BusinessIndex from "./components/BusinessIndex";
 import BusinessShowPage from './components/BusinessShowPage';
 import FooterTags from './components/FooterTags';
+import ReviewFormPage from './components/ReviewFormPage';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/businesses/:id">
             <BusinessShowPage/>
           </Route>
+          <Route path="/reviews/new" component={ReviewFormPage} />
           <Route path="/businesses">
             <BusinessIndex/>
           </Route>

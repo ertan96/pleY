@@ -4,6 +4,7 @@ import './BusinessShowPage.css';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBusiness, getBusiness } from '../../store/businesses';
+import { Link } from 'react-router-dom';
 
 
 const BUSINESS_HOURS = [
@@ -65,7 +66,9 @@ function BusinessShowPage() {
                 <div className='bottom-half-component'>
                     <div className='left-bot-half'>
                         <div className='create-review-container'>
-                            <button className='review-button'>Write a review</button>
+                            <button className='review-button'>
+                                <Link to='/reviews/new'>Write a review</Link>
+                            </button>
                         </div>
                         <div className='business-location'>
                             <div className='top-location'>

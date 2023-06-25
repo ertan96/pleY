@@ -4,10 +4,9 @@ import { createReview, updateReview, fetchReview } from '../../store/reviews';
 
 function ReviewFormPage({ match, history }) {
     const dispatch = useDispatch();
-    const reviewId = match.params.reviewId;  // get review id from URL
-    const review = useSelector(state => state.reviews[reviewId]);  // get review from Redux store
+    const reviewId = match.params.reviewId;  
+    const review = useSelector(state => state.reviews[reviewId]); 
 
-    // Local state for form inputs
     const [rating, setRating] = useState(review ? review.rating : '');
     const [content, setContent] = useState(review ? review.content : '');
 
@@ -17,17 +16,14 @@ function ReviewFormPage({ match, history }) {
         }
     }, [dispatch, reviewId]);
 
-    // Handle form submission
     const handleSubmit = e => {
         e.preventDefault();
         const reviewData = { rating, content };
 
         if (reviewId) {
-            // Update review
             dispatch(updateReview({ ...reviewData, id: reviewId }))
                 .then(() => history.push(`/businesses/${review.businessId}`));
         } else {
-            // Create new review
             dispatch(createReview(reviewData))
                 .then(() => history.push(`/businesses/${review.businessId}`));
         }
