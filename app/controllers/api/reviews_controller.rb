@@ -17,7 +17,7 @@ class Api::ReviewsController < ApplicationController
             render json: @review
         else
             render json: @review.errors, status: 422
-        end
+    end
     end
 
     def update
@@ -31,7 +31,11 @@ class Api::ReviewsController < ApplicationController
 
     def destroy
         @review = Review.find(params[:id])
+        business_id = @review.business_id
         @review.destroy
+
+        @business = Business.find(business_id)
+        render json: @business
     end
 
     private
