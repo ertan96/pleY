@@ -3,9 +3,10 @@ import { useParams } from 'react-router-dom';
 import './BusinessShowPage.css';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBusiness, getBusiness } from '../../store/businesses';
+import { fetchBusiness} from '../../store/businesses';
+import { fetchReviews } from '../../store/reviews';
 import { Link } from 'react-router-dom';
-
+import ReviewShow from '../ReviewShow';
 
 const BUSINESS_HOURS = [
     { day: 'Mon', hours: '08:00 AM - 09:00 PM' },
@@ -24,6 +25,7 @@ function BusinessShowPage() {
 
     useEffect(() => {
         dispatch(fetchBusiness(id));
+        dispatch(fetchReviews());
     }, [dispatch, id]);
 
     if (business) {
@@ -97,7 +99,7 @@ function BusinessShowPage() {
                         <div className='review-section-container'>
                             <h2>All Reviews</h2>
                             <p>Reviews go here</p>
-                            
+                            <ReviewShow businessId={id}/>
                             {/* <div>
                                 <img src={business.photoUrl} alt="none"/>
                             </div> */}

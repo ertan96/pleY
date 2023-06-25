@@ -83,19 +83,30 @@ export const deleteReview = reviewId => async (dispatch) => {
     }
 };
 
-const reviewsReducer = (state = {}, action) => {
+const reviewsReducer = (state = { byId: {} }, action) => {
     switch (action.type) {
         case RECEIVE_REVIEWS:
-            return { ...action.reviews };
-        case RECEIVE_REVIEW:
-            return { ...state, [action.review.id]: action.review };
-        case REMOVE_REVIEW:
-            const newState = { ...state };
-            delete newState[action.reviewId];
+            const { reviews } = action;
+            const newState = { ...state, byId: { ...state.byId } };
+            reviews.forEach((review) => {
+                const reviewId = review.id;
+        
+                if (newState.byId[reviewId]) {
+                    newState.byId[reviewId] = { ...newState.byId[reviewId], ...review };
+                } else {
+                    newState.byId[reviewId] = review;
+                }
+            });
             return newState;
+        case RECEIVE_REVIEW:
+            return { ...state, byId: { ...state.byId, [action.review.id]: action.review } };
+        case REMOVE_REVIEW:
+            const updatedState = { ...state, byId: { ...state.byId } };
+            delete updatedState.byId[action.reviewId];
+            return updatedState;
         default:
             return state;
     }
-}
+};
 
 export default reviewsReducer;

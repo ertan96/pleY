@@ -11,11 +11,14 @@ puts "Destroying tables..."
 # Unnecessary if using `rails db:seed:replant`
 User.destroy_all
 Business.destroy_all
+Review.destroy_all
 
 puts "Resetting primary keys..."
 # For easy testing, so that after seeding, the first `User` has `id` of 1
 ApplicationRecord.connection.reset_pk_sequence!('users')
 ApplicationRecord.connection.reset_pk_sequence!('businesses')
+ApplicationRecord.connection.reset_pk_sequence!('reviews')
+
 
 puts "Creating users..."
 
@@ -123,6 +126,34 @@ if sushi_go_crazy.present?
 else
   puts "Could not find business"
 end
+
+puts "Creating a review..."
+
+john = User.find_by(first_name: 'John', last_name_initial: 'D')
+sushi_go_crazy = Business.find_by(name: 'Sushi Go Crazy')
+
+Review.create!(
+  body: 'Delicious sushi, great service I would come back here anytime of the week to go crazy for their sushi!',
+  rating: 5,
+  user_id: john.id,
+  business_id: sushi_go_crazy.id
+)
+
+Review.create!(
+  body: 'This is my 2nd time coming here and the food here is SO DELICIOUS, I cannot stop coming here!',
+  rating: 5,
+  user_id: john.id,
+  business_id: sushi_go_crazy.id
+)
+
+Review.create!(
+  body: 'This is my 3rd time coming here but the fish was not so fresh this time... I feel like the quality has gone down.',
+  rating: 3,
+  user_id: john.id,
+  business_id: sushi_go_crazy.id
+)
+
+puts "Created review!"
 
 # 9.times do
 #   Business.create!({
