@@ -16,6 +16,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render json: @review
         else
+            puts "Review failed to save with errors: #{@review.errors.full_messages}"
             render json: @review.errors, status: 422
     end
     end

@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 export const RECEIVE_REVIEWS = 'reviews/RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW';
@@ -44,7 +46,7 @@ export const fetchReview = reviewId => async (dispatch) => {
 };
 
 export const createReview = review => async (dispatch) => {
-    const response = await fetch(`/api/reviews/`, {
+    const response = await csrfFetch(`/api/reviews/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -55,11 +57,12 @@ export const createReview = review => async (dispatch) => {
     if (response.ok) {
         const review = await response.json();
         dispatch(receiveReview(review));
+        return review;
     }
 };
 
 export const updateReview = review => async (dispatch) => {
-    const response = await fetch(`/api/reviews/${review.id}`, {
+    const response = await csrfFetch(`/api/reviews/${review.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -70,11 +73,12 @@ export const updateReview = review => async (dispatch) => {
     if (response.ok) {
         const review = await response.json();
         dispatch(receiveReview(review));
+        return review;
     }
 };
 
 export const deleteReview = reviewId => async (dispatch) => {
-    const response = await fetch (`/api/reviews/${reviewId}`, {
+    const response = await csrfFetch (`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     });
     
@@ -83,26 +87,20 @@ export const deleteReview = reviewId => async (dispatch) => {
     }
 };
 
-const reviewsReducer = (state = { byId: {} }, action) => {
+const reviewsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_REVIEWS:
             const { reviews } = action;
-            const newState = { ...state, byId: { ...state.byId } };
+            const newState = { ...state };
             reviews.forEach((review) => {
-                const reviewId = review.id;
-        
-                if (newState.byId[reviewId]) {
-                    newState.byId[reviewId] = { ...newState.byId[reviewId], ...review };
-                } else {
-                    newState.byId[reviewId] = review;
-                }
+                newState[review.id] = review;
             });
             return newState;
         case RECEIVE_REVIEW:
-            return { ...state, byId: { ...state.byId, [action.review.id]: action.review } };
+            return { ...state, [action.review.id]: action.review };
         case REMOVE_REVIEW:
-            const updatedState = { ...state, byId: { ...state.byId } };
-            delete updatedState.byId[action.reviewId];
+            const updatedState = { ...state };
+            delete updatedState[action.reviewId];
             return updatedState;
         default:
             return state;

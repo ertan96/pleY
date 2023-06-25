@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createReview, updateReview, fetchReview } from '../../store/reviews';
+import { useParams } from 'react-router-dom';
 
-function ReviewFormPage({ match, history }) {
+function ReviewFormPage({ history }) {
     const dispatch = useDispatch();
-    const reviewId = match.params.reviewId;  
-    const review = useSelector(state => state.reviews[reviewId]); 
+    const { reviewId, businessId } = useParams();
+    const review = useSelector(state => state.reviews[reviewId]);
 
     const [rating, setRating] = useState(review ? review.rating : '');
-    const [content, setContent] = useState(review ? review.content : '');
+    const [body, setBody] = useState(review ? review.body : '');
+
+    const user = useSelector(state => state.session.user);
+    const isLoggedIn = !!user;
 
     useEffect(() => {
         if (reviewId) {
@@ -16,35 +20,56 @@ function ReviewFormPage({ match, history }) {
         }
     }, [dispatch, reviewId]);
 
-    const handleSubmit = e => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const reviewData = { rating, content };
+
+        if (!isLoggedIn) {
+            console.log('User is not logged in');
+        return;
+        }
+
+        const reviewData = {
+            rating,
+            body,
+            user_id: user.id,
+            business_id: businessId
+        };
 
         if (reviewId) {
             dispatch(updateReview({ ...reviewData, id: reviewId }))
-                .then(() => history.push(`/businesses/${review.businessId}`));
+                .then(updatedReview => {
+                    dispatch(fetchReview(updatedReview.id));
+                    history.push(`/businesses/${review.business_id}`);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         } else {
             dispatch(createReview(reviewData))
-                .then(() => history.push(`/businesses/${review.businessId}`));
+                .then(createdReview => {
+                    dispatch(fetchReview(createdReview.id));
+                    history.push(`/businesses/${businessId}`);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         }
     };
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label>
-                    Rating:
-                    <input 
-                        type="number" 
+                <label>Rating:
+                    <input
+                        type="number"
                         value={rating}
                         onChange={(e) => setRating(e.target.value)}
                     />
                 </label>
-                <label>
-                    Review:
-                    <textarea 
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
+                <label>Review:
+                    <textarea
+                        value={body}
+                        onChange={(e) => setBody(e.target.value)}
                     />
                 </label>
                 <button type="submit">Submit</button>

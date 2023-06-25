@@ -14,28 +14,19 @@ function App() {
   return (
     <>
       <Navigation />
-        <Switch>
-          <Route path="/businesses/:id">
-            <BusinessShowPage/>
-          </Route>
-          <Route path="/reviews/new" component={ReviewFormPage} />
-          <Route path="/businesses">
-            <BusinessIndex/>
-          </Route>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route exact path="/">
-            <HomepagePhoto/>
-          </Route>
-          <Route>
-            <Redirect to="/" />
-          </Route>
-        </Switch>
-        <FooterTags/>
+      <Switch>
+        <Route path="/businesses/:id" component={BusinessShowPage} />
+        <Route path="/reviews/new/:businessId" component={ReviewFormPage} />
+        <Route path="/reviews/edit/:reviewId" component={ReviewFormPage} />
+        <Route path="/businesses" component={BusinessIndex} />
+        <Route path="/login" component={LoginFormPage} />
+        <Route path="/signup" component={SignupFormPage} />
+        <Route exact path="/" component={HomepagePhoto} />
+        <Route>
+          <Redirect to="/" />
+        </Route>
+      </Switch>
+      <FooterTags />
     </>
   );
 }

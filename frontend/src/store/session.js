@@ -1,3 +1,5 @@
+
+
 import csrfFetch from './csrf';
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
@@ -77,6 +79,12 @@ export const logout = () => async (dispatch) => {
 
 const initialState = {
     user: JSON.parse(sessionStorage.getItem("currentUser"))
+};
+
+export const restoreCSRF = () => async dispatch => {
+  const response = await csrfFetch("/api/session");
+  storeCSRFToken(response);
+  return response;
 };
 
 const sessionReducer = (state = initialState, action) => {

@@ -69,7 +69,7 @@ function BusinessShowPage() {
                     <div className='left-bot-half'>
                         <div className='create-review-container'>
                             <button className='review-button'>
-                                <Link to='/reviews/new'>Write a review</Link>
+                                <Link to={`/reviews/new/${business.id}`}>Write a review</Link>
                             </button>
                         </div>
                         <div className='business-location'>
@@ -99,7 +99,7 @@ function BusinessShowPage() {
                         <div className='review-section-container'>
                             <h2>All Reviews</h2>
                             <p>Reviews go here</p>
-                            <ReviewShow businessId={id}/>
+                            <ReviewShow id={id}/>
                             {/* <div>
                                 <img src={business.photoUrl} alt="none"/>
                             </div> */}
