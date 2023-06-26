@@ -39,7 +39,7 @@ const MapContainer = ({businesses}) => {
                             <Link to={`/businesses/${business.id}`}>
                                 <div>
                                     <h3>{business.name}</h3>
-                                    <p>{business.address}</p>
+                                    <h3>{business.address}</h3>
                                 </div>
                             </Link>
                         </InfoWindow>

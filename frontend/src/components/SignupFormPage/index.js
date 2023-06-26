@@ -102,7 +102,7 @@ function SignupFormPage() {
           <br />
           <button type="submit" className='login-button'>Sign Up</button>
           <div className='sign-up'>
-            <p>Already on Yelp? <Link to='login' className='sign-up-button'>Log in</Link></p>
+            <h2>Already on Yelp? <Link to='login' className='sign-up-button'>Log in</Link></h2>
           </div>
         </form>
       </div>

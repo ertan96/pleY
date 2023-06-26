@@ -56,9 +56,9 @@ function ReviewShow({ id }) {
                 <div key={index}>
                     {console.log(user)}
                     <h2><BsPersonCircle/>{review.user_info}</h2>
-                    <h3>Rating: <StarRating rating={review.rating} /> </h3>
-                    <p>Review date: {new Date(review.created_at).toLocaleDateString()}</p>
-                    <p>{review.body}</p>
+                    <h3>Rating: <StarRating rating={review.rating} size={20}/> </h3>
+                    <h2>Review date: {new Date(review.created_at).toLocaleDateString()}</h2>
+                    <h2>{review.body}</h2>
                     { user && user.id === review.user_id && (
                         <div className='edit-dropdown-container'>
                             <button onClick={openMenu}><BsThreeDots/></button>

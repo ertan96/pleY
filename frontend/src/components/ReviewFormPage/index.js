@@ -73,7 +73,7 @@ function ReviewFormPage({ history }) {
                         onChange={(e) => setBody(e.target.value)}
                     />
                 </label>
-                {!isLoggedIn && <p>You must be logged in to make a review.</p>}
+                {!isLoggedIn && <h2>You must be logged in to make a review.</h2>}
                 <button type="submit">Submit</button>
             </form>
             

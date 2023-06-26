@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import './StarRating.css';
 
-export function StarRating({ rating }) {
+export function StarRating({ rating, size = 32 }) {
     const roundedRating = Math.round(rating);
     return (
         <div>
@@ -12,7 +12,7 @@ export function StarRating({ rating }) {
                     <label key={i}>
                         <FaStar className='star-icon'
                             color={ratingValue <= roundedRating ? "#ffc107" : "#e4e5e9"}
-                            size={30}
+                            size={size}
                         />
                     </label>
                 );

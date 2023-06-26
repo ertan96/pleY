@@ -32,7 +32,7 @@ function FooterTags() {
                         </ul>
                     </div>
                     <div className='copyright'>
-                        <p>Copyright &copy; 2023 <span className='bold-text'>pleY</span> <BsYelp className='yelp-icon'/>. All Rights Reserved</p>
+                        <h2>Copyright &copy; 2023 <span className='bold-text'>pleY</span> <BsYelp className='yelp-icon'/>. All Rights Reserved</h2>
                     </div>
                 </div>
             </div>

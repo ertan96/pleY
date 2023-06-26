@@ -36,14 +36,16 @@ function BusinessIndex() {
 
     return (
         <div className="business-list">
-            <h1>All Restaurants</h1>
+            <h1>All Restaurants results in San Francisco</h1>
             <div className='business-index-container'>
                 <ul>
                     {businesses.map((business, index) => {
                         let firstReviewText = 'No reviews yet.';
                         for (let reviewId in reviews){
                             if (reviews[reviewId].business_id === business.id){
-                                firstReviewText = reviews[reviewId].body;
+                                firstReviewText = reviews[reviewId].body.length < 100
+                                ? reviews[reviewId.body]
+                                : `"${reviews[reviewId].body.substring(0, 100)}..."`;
                                 break;
                             }
                         }
@@ -62,14 +64,14 @@ function BusinessIndex() {
                                             </div>
                                             <div className='business-info'>
                                                 <h2 className='business-header-font'>{index + 1}. <span className='name-hover'>{business.name}</span></h2>
-                                                <p className='ratings-row'>
-                                                    <StarRating rating={businessStats.averageRating} />{businessStats.reviewCount}
-                                                </p>
-                                                <p className='dollar-row'><button className='category-font'>{business.category}</button> $$</p>
-                                                <p className='open-row'>Open until 9:00 PM</p>
+                                                <h2 className='ratings-row'>
+                                                    <StarRating rating={businessStats.averageRating} size={20} />{businessStats.reviewCount}
+                                                </h2>
+                                                <h2 className='dollar-row'><button className='category-font'>{business.category}</button> $$</h2>
+                                                <h2 className='open-row'><span className='green-open-2'>Open</span>until 9:00 PM</h2>
                                                 <div className='review-preview-container'>
-                                                    <p className='text-icon'><BiMessage/></p>
-                                                    <p className='review-preview-text'>{firstReviewText} <span className='more-text'>more</span></p>
+                                                    <h2 className='text-icon'><BiMessage/></h2>
+                                                    <h2 className='review-preview-text'>{firstReviewText} <span className='more-text'> more</span></h2>
                                                 </div>
                                             </div>
                                         </div>

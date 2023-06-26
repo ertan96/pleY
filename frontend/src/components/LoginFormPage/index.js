@@ -86,7 +86,7 @@ function LoginFormPage() {
             <button type="submit" className='login-button'>Log In</button>
             <button type='button' className='demo-login' onClick={handleDemoLogin}>Demo Login</button>
             <div className='sign-up'>
-              <p>New to Yelp? <Link to='signup' className='sign-up-button'>Sign Up</Link></p>
+              <h2>New to Yelp? <Link to='signup' className='sign-up-button'>Sign Up</Link></h2>
             </div>
           </form>
       </div>

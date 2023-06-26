@@ -8,6 +8,10 @@
     width: 97%;
 }
 
+.business-index-container > ul:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .business-index-container * {
     border-radius: 4px;
 }
@@ -22,6 +26,12 @@
     height: 250px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.business-each:hover {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 
 .business-each p, 
 .business-each h1, 
@@ -39,9 +49,9 @@
 }
 
 .business-photo {
-    border: 1px solid blue;
     width: 180px;
     height: 200px;
+    margin-right: 15px;
 }
 
 .business-photo-item {
@@ -58,19 +68,16 @@
     display: flex;
     flex-direction: column;    
     width: 430px;
-    border: 1px solid red;
 }
 
 .review-preview-container{
     display: flex;
     flex-direction: row;
-    border: 1px solid orange;
     height: 10vh;
     width: auto;
 }
 
 .text-icon {
-    border: 1px solid green;
     margin-right: 5px;
 }
 
@@ -91,6 +98,10 @@
 }
 
 .ratings-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
     margin-bottom: 5px;
 }
 
@@ -113,6 +124,8 @@
     font-size: 12px;
     padding: 4px;
     border: none;
+    font-family: inherit;
+    font-weight: bold;
 }
 
 .category-font:hover {
@@ -143,4 +156,10 @@
     height: 100%;
     position: sticky;
     top: 0;
+}
+
+.green-open-2 {
+    color: rgb(0, 128, 85);
+    margin-right: 3px;
+    font-weight: bold;
 }

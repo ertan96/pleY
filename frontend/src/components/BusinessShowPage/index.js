@@ -94,8 +94,8 @@ function BusinessShowPage() {
                             <div className='map-time-container'>
                                 <div className='map-address-left'>
                                     <MapShow business={business} />
-                                    <p className='address-line'>{business.address}</p>
-                                    <p className='address-line'>San Francisco, CA</p>
+                                    <h2 className='address-line'>{business.address}</h2>
+                                    <h2 className='address-line'>San Francisco, CA</h2>
                                 </div>
                                 <div className='time-right'>
                                     <table className='business-hours'>
@@ -113,7 +113,7 @@ function BusinessShowPage() {
                         </div>
                         <div className='review-section-container'>
                             <h2>All Reviews</h2>
-                            <p>Reviews go here</p>
+                            <h2>Reviews go here</h2>
                             <ReviewShow id={id}/>
                             {/* <div>
                                 <img src={business.photoUrl} alt="none"/>
@@ -121,13 +121,13 @@ function BusinessShowPage() {
                         </div>
                     </div>
                     <div className ='right-bot-half'>
-                        <p>floating scrolling area to put some stuff here</p>
+                        <h2>floating scrolling area to put some stuff here</h2>
                     </div>
                 </div>
             </div>
         ) 
     } else {
-        return <p>Loading...</p>
+        return <h2>Loading...</h2>
     }
 }
 
