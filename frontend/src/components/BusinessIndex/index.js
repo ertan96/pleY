@@ -54,7 +54,11 @@ function BusinessIndex() {
                                     <li key={business.id}>
                                         <div className='business-each-box'>
                                             <div className='business-photo'>
-                                                <p>business photo goes here</p>
+                                                {business.photosUrls && business.photosUrls.length > 0 && 
+                                                    <div className='business-photo-item'>
+                                                        <img src={business.photosUrls[0]} alt="business" />
+                                                    </div>
+                                                }
                                             </div>
                                             <div className='business-info'>
                                                 <h2 className='business-header-font'>{index + 1}. <span className='name-hover'>{business.name}</span></h2>
