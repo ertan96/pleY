@@ -39,3 +39,6 @@
 .env.test.local
 .env.production.local
 .eslintcache
+
+
+frontend/env.development.local
