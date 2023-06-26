@@ -8,7 +8,7 @@ import { fetchReviews, getReviews } from '../../store/reviews';
 import { Link } from 'react-router-dom';
 import ReviewShow from '../ReviewShow';
 import { StarRating } from '../StarRating';
-// import MapContainer from '../map/map';
+import MapShow from '../map/mapShow';
 
 const BUSINESS_HOURS = [
     { day: 'Mon', hours: '08:00 AM - 09:00 PM' },
@@ -93,6 +93,7 @@ function BusinessShowPage() {
                             </div>
                             <div className='map-time-container'>
                                 <div className='map-address-left'>
+                                    <MapShow business={business} />
                                     <p className='address-line'>{business.address}</p>
                                     <p className='address-line'>San Francisco, CA</p>
                                 </div>

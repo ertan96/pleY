@@ -37,7 +37,6 @@ function BusinessIndex() {
     return (
         <div className="business-list">
             <h1>All Restaurants</h1>
-            <MapContainer businesses={businessesArray}/>
             <div className='business-index-container'>
                 <ul>
                     {businesses.map((business, index) => {
@@ -76,6 +75,9 @@ function BusinessIndex() {
                         );
                     })}
                 </ul>
+                <div className='map-sticky'>
+                    <MapContainer businesses={businessesArray}/>
+                </div>
             </div>
         </div>
     );

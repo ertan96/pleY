@@ -12,7 +12,7 @@ const MapContainer = ({businesses}) => {
 
     const mapStyles = {
         height: '100vh',
-        width: '36%',
+        width: '100%',
     };
 
     const defaultCenter = {
@@ -20,11 +20,9 @@ const MapContainer = ({businesses}) => {
     lng: -122.4194,
     };
 
-
-
     return (
         <LoadScript googleMapsApiKey={process.env.REACT_APP_MAPS_API_KEY}>
-            <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
+            <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter} mapContainerClassName='map-container'>
                 {businesses.map((business, index) => {
                 return (
                     <Marker 
