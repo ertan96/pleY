@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import './map.css';
 
 const MapContainer = ({businesses}) => {
     const [selected, setSelected] = useState(null);
@@ -23,7 +24,7 @@ const MapContainer = ({businesses}) => {
             <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
                 {businesses.map((business, index) => {
                 return (
-                    <Marker
+                    <Marker className='marker-color'
                         key={business.id}
                         position={{ lat: business.lat, lng: business.lng }}
                         onClick={() => onSelect(business)}
