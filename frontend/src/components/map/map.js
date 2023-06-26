@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import './map.css';
+import { Link } from 'react-router-dom';
 
 const MapContainer = ({businesses}) => {
     const [selected, setSelected] = useState(null);
@@ -19,12 +20,14 @@ const MapContainer = ({businesses}) => {
     lng: -122.4194,
     };
 
+
+
     return (
         <LoadScript googleMapsApiKey={process.env.REACT_APP_MAPS_API_KEY}>
             <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
                 {businesses.map((business, index) => {
                 return (
-                    <Marker className='marker-color'
+                    <Marker 
                         key={business.id}
                         position={{ lat: business.lat, lng: business.lng }}
                         onClick={() => onSelect(business)}
@@ -35,10 +38,12 @@ const MapContainer = ({businesses}) => {
                             position={{ lat: business.lat, lng: business.lng }}
                             onCloseClick={() => setSelected(null)}
                         >
-                            <div>
-                                <h3>{business.name}</h3>
-                                <p>{business.address}</p>
-                            </div>
+                            <Link to={`/businesses/${business.id}`}>
+                                <div>
+                                    <h3>{business.name}</h3>
+                                    <p>{business.address}</p>
+                                </div>
+                            </Link>
                         </InfoWindow>
                     )}
                     </Marker>
