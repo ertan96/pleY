@@ -59,6 +59,7 @@ function ReviewFormPage({ history }) {
 
     return (
         <div>
+            
             <form onSubmit={handleSubmit}>
                 <label>Rating:
                     <StarInput
@@ -72,8 +73,10 @@ function ReviewFormPage({ history }) {
                         onChange={(e) => setBody(e.target.value)}
                     />
                 </label>
+                {!isLoggedIn && <p>You must be logged in to make a review.</p>}
                 <button type="submit">Submit</button>
             </form>
+            
         </div>
     );
 }

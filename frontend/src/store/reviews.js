@@ -93,11 +93,11 @@ const reviewsReducer = (state = {}, action) => {
             const { reviews } = action;
             const newState = { ...state };
             reviews.forEach((review) => {
-                newState[review.id] = review;
+                newState[review.id] = { ...review, user_info: review.user_info };
             });
             return newState;
         case RECEIVE_REVIEW:
-            return { ...state, [action.review.id]: action.review };
+            return { ...state, [action.review.id]: { ...action.review, user_info: action.review.user_info } };
         case REMOVE_REVIEW:
             const updatedState = { ...state };
             delete updatedState[action.reviewId];

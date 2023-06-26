@@ -16,4 +16,10 @@ class Review < ApplicationRecord
 
     belongs_to :user
     belongs_to :business
+
+    def user_info
+        user = self.user
+        return "#{user.first_name} #{user.last_name_initial}."
+    end
+
 end

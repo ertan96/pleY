@@ -3,12 +3,12 @@ class Api::ReviewsController < ApplicationController
 
     def index
         @reviews = Review.all
-        render json: @reviews
+        render json: @reviews, methods: [:user_info]
     end
 
     def show
         @review = Review.find(params[:id])
-        render json: @review
+        render json: @review, methods: [:user_info]
     end
 
     def create
@@ -18,7 +18,7 @@ class Api::ReviewsController < ApplicationController
         else
             puts "Review failed to save with errors: #{@review.errors.full_messages}"
             render json: @review.errors, status: 422
-    end
+        end
     end
 
     def update

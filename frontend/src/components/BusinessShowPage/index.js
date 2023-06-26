@@ -4,9 +4,10 @@ import './BusinessShowPage.css';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBusiness} from '../../store/businesses';
-import { fetchReviews } from '../../store/reviews';
+import { fetchReviews, getReviews } from '../../store/reviews';
 import { Link } from 'react-router-dom';
 import ReviewShow from '../ReviewShow';
+import { StarRating } from '../StarRating';
 
 const BUSINESS_HOURS = [
     { day: 'Mon', hours: '08:00 AM - 09:00 PM' },
@@ -22,11 +23,21 @@ function BusinessShowPage() {
     const dispatch = useDispatch();
     const { id } = useParams();
     const business = useSelector(state => state.businesses[id]);
+    const reviews = useSelector(getReviews);
 
     useEffect(() => {
         dispatch(fetchBusiness(id));
         dispatch(fetchReviews());
     }, [dispatch, id]);
+
+    const calculateAverageRating = (reviews) => {
+        if (reviews.length === 0) {
+            return 0;
+        }
+    
+        const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+        return Math.round(totalRating / reviews.length);
+    }
 
     if (business) {
         const headerStyle = {
@@ -36,12 +47,15 @@ function BusinessShowPage() {
             backgroundRepeat: 'repeat'
         };
 
+        const averageRating = calculateAverageRating(reviews);
+
         return (
             <div className='business-page'>
                 <div className='business-header' style={headerStyle}>
                     <div className='business-header-content'>
                         <h1>{business.name}</h1>
-                        <h2 className='business-review-header'>Reviews go here 324 Reviews</h2>
+                        <h2 className='business-review-header'>
+                            <StarRating rating={averageRating}/> {reviews.length} Reviews</h2>
                         <h2 className='claimed-row'>
                             <span className='claimed-style'>
                                 <BsFillCheckCircleFill /> Claimed  

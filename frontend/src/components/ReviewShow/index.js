@@ -54,7 +54,8 @@ function ReviewShow({ id }) {
             
             {reviews && reviews.map((review, index) => (
                 <div key={index}>
-                    <h2><BsPersonCircle/>{user.firstName} {user.lastNameInitial}.</h2>
+                    {console.log(user)}
+                    <h2><BsPersonCircle/>{review.user_info}</h2>
                     <h3>Rating: <StarRating rating={review.rating} /> </h3>
                     <p>Review date: {new Date(review.created_at).toLocaleDateString()}</p>
                     <p>{review.body}</p>
