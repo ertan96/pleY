@@ -19,7 +19,10 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.business-each * {
+.business-each p, 
+.business-each h1, 
+.business-each h2, 
+.business-each h3 {
     color: black;
 }
 
