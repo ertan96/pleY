@@ -8,6 +8,7 @@ import { fetchReviews, getReviews } from '../../store/reviews';
 import { Link } from 'react-router-dom';
 import ReviewShow from '../ReviewShow';
 import { StarRating } from '../StarRating';
+import MapContainer from '../map/map';
 
 const BUSINESS_HOURS = [
     { day: 'Mon', hours: '08:00 AM - 09:00 PM' },
@@ -122,6 +123,7 @@ function BusinessShowPage() {
                         <p>floating scrolling area to put some stuff here</p>
                     </div>
                 </div>
+                <MapContainer/>
             </div>
         ) 
     } else {

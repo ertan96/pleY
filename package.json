@@ -21,5 +21,8 @@
   "homepage": "https://github.com/ertan96/pleY#readme",
   "engines": {
     "node": "16.19.1"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.18.1"
   }
 }
