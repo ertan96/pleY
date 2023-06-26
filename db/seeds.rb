@@ -36,36 +36,36 @@ puts "Creating Japanese Businesses..."
 sushi_go_crazy = Business.create!({
   name: 'Sushi Go Crazy', 
   address: '123 Main St.',
-  latitude: '37.791994', 
-  longitude: '-122.409425',
+  lat: '37.791994', 
+  lng: '-122.409425',
   category: 'Japanese'
 })
 Business.create!({
   name: 'Japantown Izakaya', 
   address: '345 Japan St.',
-  latitude: '37.783592', 
-  longitude: '-122.425436',
+  lat: '37.783592', 
+  lng: '-122.425436',
   category: 'Japanese'
 })
 Business.create!({
   name: 'Omakase', 
   address: '678 Noreiga St.',
-  latitude: '37.753680', 
-  longitude: '-122.487017',
+  lat: '37.753680', 
+  lng: '-122.487017',
   category: 'Japanese'
 })
 Business.create!({
   name: 'Ramenagi', 
   address: '112 Van Ness St.',
-  latitude: '37.791036', 
-  longitude: '-122.422178',
+  lat: '37.791036', 
+  lng: '-122.422178',
   category: 'Japanese'
 })
 Business.create!({
   name: 'Tasty BoilingPot', 
   address: '1111 Chinatown St.',
-  latitude: '37.793816', 
-  longitude: '-122.409548',
+  lat: '37.793816', 
+  lng: '-122.409548',
   category: 'Japanese'
 })
 
@@ -74,36 +74,36 @@ puts "Creating Viet Restaurants"
 Business.create!({
   name: 'Pho 100', 
   address: '100 Irving St.',
-  latitude: '37.763759', 
-  longitude: '-122.471272',
+  lat: '37.763759', 
+  lng: '-122.471272',
   category: 'Vietnamese'
 })
 Business.create!({
   name: 'Pho 200', 
   address: '200 Irving St.',
-  latitude: '37.763954', 
-  longitude: '-122.471261',
+  lat: '37.763954', 
+  lng: '-122.471261',
   category: 'Vietnamese'
 })
 Business.create!({
   name: 'Bahn Me Likey', 
   address: '999 Noriega St.',
-  latitude: '37.753779', 
-  longitude: '-122.484874',
+  lat: '37.753779', 
+  lng: '-122.484874',
   category: 'Vietnamese'
 })
 Business.create!({
   name: 'Spring Day', 
   address: '999 Real St.',
-  latitude: '37.760460', 
-  longitude: '-122.438344',
+  lat: '37.760460', 
+  lng: '-122.438344',
   category: 'Vietnamese'
 })
 Business.create!({
   name: 'Golden Sun', 
   address: '888 Sunny St.',
-  latitude: '37.757860', 
-  longitude: '-122.418900',
+  lat: '37.757860', 
+  lng: '-122.418900',
   category: 'Vietnamese'
 })
 

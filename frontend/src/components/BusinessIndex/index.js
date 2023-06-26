@@ -5,12 +5,16 @@ import { fetchReviews } from '../../store/reviews';
 import { StarRating } from '../StarRating';
 import {Link} from 'react-router-dom';
 import './BusinessIndex.css';
-import { BiMessage } from 'react-icons/bi'
+import { BiMessage } from 'react-icons/bi';
+import MapContainer from '../map/map';
+
 
 function BusinessIndex() {
     const dispatch = useDispatch();
     const businesses = useSelector(getBusinesses);
     const reviews = useSelector(state => state.reviews); 
+    const businessesArray = Object.values(businesses)
+
 
     useEffect(() => {
         dispatch(fetchBusinesses());
@@ -33,6 +37,7 @@ function BusinessIndex() {
     return (
         <div className="business-list">
             <h1>All Restaurants</h1>
+            <MapContainer businesses={businessesArray}/>
             <div className='business-index-container'>
                 <ul>
                     {businesses.map((business, index) => {
