@@ -55,9 +55,10 @@ export const fetchSearch = term => async (dispatch) => {
 const businessesReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_SEARCH_RESULTS:
-            return { ...action.results};
+            const resultsObj = action.results.reduce((acc, curr) => ({ ...acc, [curr.id]: curr }), {});
+            return { ...state, ...resultsObj};
         case RECEIVE_BUSINESSES:
-            return { ...action.businesses };
+            return { ...state, ...action.businesses };
         case RECEIVE_BUSINESS:
             return { ...state, [action.business.id]: action.business };
         default:

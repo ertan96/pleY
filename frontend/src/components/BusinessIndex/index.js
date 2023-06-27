@@ -25,8 +25,7 @@ function BusinessIndex() {
             dispatch(fetchBusinesses());
         }
         dispatch(fetchReviews());
-        dispatch(fetchSearch());
-    }, [dispatch]);
+    }, [dispatch, term]);
 
     const businessAverage = (businessId) => {
         const relevantReviews = Object.values(reviews).filter(review => review.business_id === businessId);
