@@ -136,12 +136,17 @@
   border: none;
 }
 
-.homepage-logo {
-}
-
 .font-logo-link {
   text-decoration: none;
   color: white;
   font-size: 24px;
 }
 
+.profile-button {
+  color: gray;
+}
+
+.profile-button:hover {
+  cursor: pointer;
+  color: gray;
+}

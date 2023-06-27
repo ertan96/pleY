@@ -42,7 +42,7 @@ function ProfileButton({ user }) {
 
   return (
     <div className='dropdown-container'>
-      <button onClick={openMenu} className='profile-button'><BsPersonCircle/></button>
+      <div onClick={openMenu} className='profile-button'><BsPersonCircle size={36} /></div>
       {showMenu && (
         <ul className="profile-dropdown">
           <li className='uncheck'>{user.firstName} {user.lastNameInitial}.</li>

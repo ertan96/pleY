@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBusinesses, getBusinesses } from '../../store/businesses';
+import { fetchBusinesses, fetchSearch, getBusinesses } from '../../store/businesses';
 import { fetchReviews } from '../../store/reviews';
 import { StarRating } from '../StarRating';
 import {Link} from 'react-router-dom';
 import './BusinessIndex.css';
 import { BiMessage } from 'react-icons/bi';
 import MapContainer from '../map/map';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 function BusinessIndex() {
+    const { term } = useParams();
     const dispatch = useDispatch();
     const businesses = useSelector(getBusinesses);
     const reviews = useSelector(state => state.reviews); 
@@ -17,8 +19,13 @@ function BusinessIndex() {
 
 
     useEffect(() => {
-        dispatch(fetchBusinesses());
+        if (term) {
+            dispatch(fetchSearch(term));
+        } else {
+            dispatch(fetchBusinesses());
+        }
         dispatch(fetchReviews());
+        dispatch(fetchSearch());
     }, [dispatch]);
 
     const businessAverage = (businessId) => {

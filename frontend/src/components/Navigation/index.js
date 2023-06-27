@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import SearchBar from '../SearchBar';
 import './Navigation.css';
 import { BsYelp } from "react-icons/bs";
 
@@ -32,6 +33,9 @@ function Navigation() {
             <NavLink exact to="/" className='font-logo-link'>
               pleY <BsYelp size={30} className='homepage-logo'/> 
               </NavLink>
+          </div>
+          <div>
+            <SearchBar searchTerm={word => console.log(word)}/>
           </div>
           {sessionLinks}
         </div>
