@@ -164,6 +164,20 @@
     font-weight: bold;
 }
 
-/* .no-result {
+.no-result-container {
+    display: flex;
+    width: 98vw;
+    height: 80vh;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-} */
+.no-result-header {
+    border: 1px solid black;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: "Poppins"
+}

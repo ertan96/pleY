@@ -96,8 +96,14 @@ function BusinessIndex() {
                     </div>
                 </>
             ) : (
-                <div className='no-result'>
-                    <h1> No results found. </h1>
+                <div className='no-result-container'>
+                        <h2 className='no-result-header'> No results for  </h2>
+                    <ul>
+                        <li>Suggestions for improving your results:</li>
+                        <li>● Try a different location</li>
+                        <li>● Check the spelling or try alternate spellings</li>
+                        <li>● Try a more general search, e.g. "pizza" instead of "pepperoni"</li>
+                    </ul>
                 </div>
             )}
         </div>

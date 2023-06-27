@@ -12,7 +12,11 @@ const SearchBar = ({searchTerm}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(fetchSearch(searchInput));
-        history.push(`/search/${searchInput}`);
+        if (searchInput === "") {
+            history.push('/search/');
+        } else {
+            history.push(`/search/${searchInput}`);
+        }
         setSearchInput('');
     };
 
