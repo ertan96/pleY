@@ -19,6 +19,7 @@ function App() {
         <Route path="/reviews/new/:businessId" component={ReviewFormPage} />
         <Route path="/reviews/edit/:reviewId" component={ReviewFormPage} />
         <Route path="/businesses" component={BusinessIndex} />
+        <Route path="/search/:term" component={BusinessIndex} />
         <Route path="/login" component={LoginFormPage} />
         <Route path="/signup" component={SignupFormPage} />
         <Route exact path="/" component={HomepagePhoto} />

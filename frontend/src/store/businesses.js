@@ -22,7 +22,7 @@ export const getBusiness = businessId => state => {
 }
 
 export const getBusinesses = state => {
-    return state?.searchResults.length > 0 ? state.searchResults : state?.businesses ? Object.values(state.businesses) : [];
+    return state?.searchResults?.length > 0 ? state.searchResults : state?.businesses ? Object.values(state.businesses) : [];
 }
 
 export const fetchBusinesses = () => async (dispatch) => {
@@ -44,19 +44,23 @@ export const fetchBusiness = businessId => async (dispatch) => {
 };
 
 export const fetchSearch = term => async (dispatch) => {
-    const response = await fetch (`/api/businesses/search?query=${term}`)
-
-    if (response.ok) {
-        const results = await response.json();
-        dispatch(receiveSearchResults(results))
+    if (term) {
+        const response = await fetch (`/api/businesses/search?query=${term}`)
+    
+        if (response.ok) {
+            const results = await response.json();
+            dispatch(receiveSearchResults(results))
+        }
+    } else {
+        dispatch(fetchBusinesses());
     }
 }
 
 const businessesReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_SEARCH_RESULTS:
-            const resultsObj = action.results.reduce((acc, curr) => ({ ...acc, [curr.id]: curr }), {});
-            return { ...state, ...resultsObj};
+            // const resultsObj = action.results.reduce((acc, curr) => ({ ...acc, [curr.id]: curr }), {});
+            return { ...action.results};
         case RECEIVE_BUSINESSES:
             return { ...state, ...action.businesses };
         case RECEIVE_BUSINESS:
