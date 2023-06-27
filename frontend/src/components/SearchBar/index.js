@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { fetchSearch } from '../../store/businesses';
 import './SearchBar.css'
+import { FiSearch } from 'react-icons/fi';
 
 const SearchBar = ({searchTerm}) => {
     const dispatch = useDispatch();
@@ -24,14 +25,14 @@ const SearchBar = ({searchTerm}) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-                <input 
+            <div className='search-form-container'>
+                <input className='search-text-box'
                     type='text'
                     value={searchInput}
                     placeholder='Japanese, Vietnamese, American'
                     onChange={e => setSearchInput(e.target.value)}
                 />
-                <button type='submit'>Search</button>
+                <button type='submit' className='fisearch-button'><FiSearch size={24}/></button>
             </div>
         </form>
     )

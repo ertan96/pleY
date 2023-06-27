@@ -1,0 +1,26 @@
+.search-form-container {
+    display: flex;
+}
+
+.search-text-box {
+    width: 500px;
+    height: 48px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+    border: 1px;
+    outline: none;
+}
+
+.fisearch-button {
+    width: 56px;
+    height: 48px;
+    background-color: rgb(224, 7, 7);
+    color: white;
+    border-radius: 5px;
+    border: 1px;
+}
+
+.fisearch-button:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+}
