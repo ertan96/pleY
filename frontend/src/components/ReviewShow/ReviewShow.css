@@ -1,0 +1,90 @@
+.review-container {
+    margin-bottom: 40px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.avatar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.edit-dropdown-container {
+    position: relative;
+}
+
+.edit-dropdown {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 150px;
+    position: absolute;
+    right: 0%;
+    margin-top: 2px;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: white;
+    z-index: 10;
+}
+
+.edit-dropdown li {
+    display: flex;
+    margin: 0 10px;
+    padding: 9px 9px;
+    font-size: 14px;
+    z-index: 999;
+    
+}
+
+.edit-review-button {
+    text-decoration: none;
+    color: black;
+    margin-top: 5px;
+}
+
+.li-drop {
+    padding: 10px;
+}
+
+.edit-dropdown li:first-child {
+    margin-top: 10px;
+}
+
+.edit-dropdown li:nth-child(2) {
+    margin-bottom: 10px;
+}
+
+.li-drop:hover {
+    background-color: rgb(111, 106, 106, .2);
+    cursor: pointer;
+}
+
+.remove-review-button {
+    margin-bottom: 5px;
+}
+
+.dots-style:hover {
+    border: 1px black;
+    cursor: pointer;
+    background-color: rgb(111, 106, 106, .3);
+    border-radius: 50%;
+}
+
+.review-date-row {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.review-body-style {
+    font-size: 14px;
+}

@@ -112,12 +112,13 @@ function BusinessShowPage() {
                             </div>
                         </div>
                         <div className='review-section-container'>
-                            <h2>All Reviews</h2>
-                            <h2>Reviews go here</h2>
-                            <ReviewShow id={id}/>
-                            {/* <div>
-                                <img src={business.photoUrl} alt="none"/>
-                            </div> */}
+                            <div className='review-split'>
+                                <h2>All Reviews</h2>
+                                <ReviewShow id={id}/>
+                                {/* <div>
+                                    <img src={business.photoUrl} alt="none"/>
+                                </div> */}
+                            </div>
                         </div>
                     </div>
                     <div className ='right-bot-half'>
