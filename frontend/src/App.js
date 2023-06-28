@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
-import HomepagePhoto from "./components/HomepagePhoto";
+import Homepage from "./components/Homepage";
 import BusinessIndex from "./components/BusinessIndex";
 import BusinessShowPage from './components/BusinessShowPage';
 import FooterTags from './components/FooterTags';
@@ -23,7 +23,7 @@ function App() {
         <Route exact path="/search/" component={BusinessIndex} />
         <Route path="/login" component={LoginFormPage} />
         <Route path="/signup" component={SignupFormPage} />
-        <Route exact path="/" component={HomepagePhoto} />
+        <Route exact path="/" component={Homepage} />
         <Route>
           <Redirect to="/" />
         </Route>

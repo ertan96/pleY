@@ -1,0 +1,10 @@
+.homepage-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    height: 70vh;
+    width: 100vw;
+    z-index: 1;
+}

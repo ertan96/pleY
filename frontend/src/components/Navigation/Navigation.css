@@ -1,7 +1,8 @@
 .nav-container {
+  position: relative;
+  z-index: 999;
   display: flex;
   align-items: center;
-  background-color: rgb(132, 8, 8);
   padding: 24px 40px;
 }
 
@@ -138,8 +139,8 @@
 
 .font-logo-link {
   text-decoration: none;
-  color: white;
-  font-size: 24px;
+  color: black;
+  font-size: 28px;
 }
 
 .profile-button {
@@ -149,4 +150,12 @@
 .profile-button:hover {
   cursor: pointer;
   color: gray;
+}
+
+.homepage {
+  color: white;
+}
+
+.homepage-logo {
+  color: rgb(255,26,26);
 }

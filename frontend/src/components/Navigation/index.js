@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import SearchBar from '../SearchBar';
@@ -7,6 +7,7 @@ import './Navigation.css';
 import { BsYelp } from "react-icons/bs";
 
 function Navigation() {
+  const location = useLocation();
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
@@ -31,7 +32,11 @@ function Navigation() {
         <div className='nav-container'>
           <div className='home-button'>
             <NavLink exact to="/" className='font-logo-link'>
-              pleY <BsYelp size={30} className='homepage-logo'/> 
+              {location.pathname === '/' ? (
+                <h1 className='homepage'>pleY <BsYelp size={30}/></h1>
+              ): (
+                <h1 className='not-homepage'>pleY <BsYelp size={30} className='homepage-logo'/> </h1>
+              )}
               </NavLink>
           </div>
           <div>
