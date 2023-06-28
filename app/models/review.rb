@@ -22,4 +22,9 @@ class Review < ApplicationRecord
         return "#{user.first_name} #{user.last_name_initial}."
     end
 
+    def business_name
+        business = self.business
+        return "#{business.name}"
+    end
+
 end

@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .homepage-wrapper {
     position: absolute;
     top: 0;
@@ -54,4 +58,30 @@
     font-size: 16px;
     font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: bold;
+}
+
+.homepage-bottom-wrapper {
+    display: flex;
+    margin-top: 70vh;
+    height: 100vh;
+    width: 100%;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+.recent-activity-container {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid orange;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.grid-container {
+    border: 5px solid green;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+    margin-top: 20%;
 }
