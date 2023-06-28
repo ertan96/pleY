@@ -10,8 +10,6 @@ body {
     height: 75vh;
     width: 100vw;
     z-index: 1;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .splash-image {
@@ -22,6 +20,8 @@ body {
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .splash-image.active {
@@ -64,23 +64,22 @@ body {
     display: flex;
     margin-top: 70vh;
     width: 100%;
-    border: 1px solid black;
     justify-content: center;
 }
 
 .recent-activity-container {
     display: flex;
     flex-direction: column;
-    border: 5px solid orange;
     font-size: 28px;
-    font-weight: bold;
-    font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    /* height: 100%; */
     align-items: center;
 }
 
+.recent-act-text {
+    font-weight: bold;
+    font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 .grid-container {
-    border: 5px solid green;
     display: grid;
     grid-template-columns: auto auto auto;
     width: 60vw;
@@ -90,10 +89,62 @@ body {
 }
 
 .review-box {
-    border: 3px solid red;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     width: 330px;
     height: 330px;
-    word-wrap: break-word; /* break words if they're too long to fit */
-    overflow: hidden; /* hide overflowing content */
+    word-wrap: break-word; 
+    overflow: hidden;
     font-size: 14px;
+}
+
+.review-margins {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.activity-header {
+    display: flex;
+    align-items: center;
+
+}
+
+.name-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    gap: 5px;
+
+}
+
+.review-user-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.review-bot-text {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.review-rating {
+    margin: 15px 0;
+}
+
+.reaction-buttons {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-link-reroute {
+    text-decoration: none;
+    color: rgb(2, 122, 151); 
+    font-weight: bold;
+}
+
+.review-link-reroute:hover {
+    text-decoration: underline;
 }
