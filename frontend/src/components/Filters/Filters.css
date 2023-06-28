@@ -1,0 +1,78 @@
+.filter-container {
+    position: sticky;
+    height: 100vh;
+    width: 15vw;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-header {
+    font-weight: bold;
+    margin: 20px 10px;
+}
+
+.filter-dollars {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px;
+}
+
+.filter-dollars > button {
+    background-color: white;
+    border: 1px solid rgb(168, 168, 168);
+    width: 50px;
+    height: 25px;
+    font-size: 12px;
+}
+
+.filter-dollars > button:hover {
+    cursor: pointer;
+}
+
+.first-but {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.second-but,
+.third-but {
+    border-radius: 0;
+}
+
+.fourth-but {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.filter-bottom-half {
+    margin: 20px 10px;
+    font-size: 14px;
+}
+
+.filter-bottom-half > div {
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.filter-bottom-half > div > h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.filter-bottom-half li {
+    margin: 5px 0;
+}
+
+.filter-suggested-container {
+    margin: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+

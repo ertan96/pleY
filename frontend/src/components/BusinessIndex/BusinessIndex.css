@@ -1,7 +1,7 @@
 .business-index-container {
     display: flex;
     text-decoration: none;
-    margin-left: 50px;
+    margin-left: 40px;
     justify-content: space-between;
     min-height: 100vh;
     overflow-y: visible;
@@ -35,7 +35,7 @@
     justify-content: space-between;
     align-items: baseline;
     padding: 24px;
-    width: 680px;
+    width: 750px;
     height: 250px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -159,15 +159,9 @@
 
 .map-sticky {
     position: sticky;
-    top: 0;
-    height: 100vh;
     overflow: auto;
-}
-
-.map-sticky {
     width: 36%;
     height: 100%;
-    position: sticky;
     top: 0;
 }
 
