@@ -123,6 +123,7 @@
     font-family: 'Poppins';
     font-size: 20px;
     color: rgb(45, 46, 47);
+    font-weight: bold;
 }
 
 .suggest-edit {
@@ -162,20 +163,20 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    border: 1px solid black;
     width: 315px;
     height: 274px;
 }
 
 .address-line {
     margin: 0;
+    margin-top: 10px;
 }
 
-.address-line:nth-child(1) {
+.address-line:nth-child(3) {
     color: rgb(2, 122, 151);
 }
 
-.address-line:nth-child(2) {
+.address-line:nth-child(4) {
     font-weight: bold;
 }
 
@@ -200,15 +201,28 @@
 }
 
 .review-section-container {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
     margin-top: 32px;
     padding-top: 32px;
 }
 
-
+.header-all-reviews {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 30px;
+}
 
 .business-photo-item img {
     max-width: 100%;
     height: auto;
 }
 
+.write-a-review {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    gap: 5px;
+}

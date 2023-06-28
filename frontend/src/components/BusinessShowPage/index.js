@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './BusinessShowPage.css';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
+import { AiOutlineStar } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBusiness} from '../../store/businesses';
 import { fetchReviews, getReviews } from '../../store/reviews';
@@ -84,7 +85,7 @@ function BusinessShowPage() {
                     <div className='left-bot-half'>
                         <div className='create-review-container'>
                             <button className='review-button'>
-                                <Link to={`/reviews/new/${business.id}`}>Write a review</Link>
+                                <Link to={`/reviews/new/${business.id}`} className='write-a-review'><AiOutlineStar size={24} />Write a review</Link>
                             </button>
                         </div>
                         <div className='business-location'>
@@ -113,8 +114,8 @@ function BusinessShowPage() {
                             </div>
                         </div>
                         <div className='review-section-container'>
+                            <h2 className='header-all-reviews'>All Reviews</h2>
                             <div className='review-split'>
-                                <h2>All Reviews</h2>
                                 <ReviewShow id={id}/>
                                 {/* <div>
                                     <img src={business.photoUrl} alt="none"/>
