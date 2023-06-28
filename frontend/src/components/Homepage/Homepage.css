@@ -3,8 +3,10 @@
     top: 0;
     display: flex;
     background-color: antiquewhite;
-    border: 2px solid black;
-    height: 70vh;
+    height: 75vh;
     width: 100vw;
     z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
 }
