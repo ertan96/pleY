@@ -65,11 +65,13 @@ function ReviewShow({ id }) {
                             </div>
                             {showMenu === review.id && (
                                 <ul className="edit-dropdown">
-                                    <li className='li-drop'>
-                                        <Link to={`/reviews/edit/${review.id}`} className='edit-review-button'>Edit Review</Link>
-                                    </li>
-                                    <li className='li-drop'>
-                                        <div onClick={() => handleDelete(review.id)} className='remove-review-button'>Remove Review</div>
+                                    <Link to={`/reviews/edit/${review.id}`} className='edit-review-button'>
+                                        <li className='li-drop'>
+                                            Edit Review
+                                        </li>
+                                    </Link>
+                                    <li className='li-drop' onClick={() => handleDelete(review.id)}>
+                                        <div className='remove-review-button'>Remove Review</div>
                                     </li>
                                 </ul>
                             )}

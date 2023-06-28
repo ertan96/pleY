@@ -66,7 +66,7 @@
 .business-photo-item img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* This will help to cover the image within the div without stretching it */
+    object-fit: cover; 
 }
 
 .bottom-half-component {
@@ -201,7 +201,6 @@
 }
 
 .review-section-container {
-    /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
     margin-top: 32px;
     padding-top: 32px;
 }
@@ -211,7 +210,7 @@
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .business-photo-item img {

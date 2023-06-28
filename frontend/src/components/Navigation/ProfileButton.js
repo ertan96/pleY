@@ -46,7 +46,6 @@ function ProfileButton({ user }) {
       {showMenu && (
         <ul className="profile-dropdown">
           <li className='uncheck'>{user.firstName} {user.lastNameInitial}.</li>
-          {/* <li className='uncheck'>{user.email}</li> */}
           <li className="unclickable-item">
             <div className="icon-wrapper">
               <VscAccount size={24} className='icon' />

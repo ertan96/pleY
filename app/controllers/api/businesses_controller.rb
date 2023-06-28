@@ -13,4 +13,5 @@ class Api::BusinessesController < ApplicationController
     @businesses = Business.where("LOWER(name) LIKE ? OR LOWER(category) LIKE ?", search_term, search_term)
     render :index
   end
+  
 end
