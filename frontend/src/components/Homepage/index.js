@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useMemo} from 'react';
 import './Homepage.css';
+import { FiSearch } from 'react-icons/fi';
+
 
 function Homepage() {
     const aws_image_urls = useMemo(() => [
@@ -11,7 +13,7 @@ function Homepage() {
 
     const image_titles = useMemo(() => ["Swing into Summer", "Road trips await", "Make a splash", "Tell pests to bug off"], []);
 
-    const button_texts = useMemo(() => ["Golf Course", "Oil Change", "Pool Service", "Pest Control"], []);
+    const button_texts = useMemo(() => ["Golf courses", "Oil change", "Pool service", "Pest control"], []);
     
     const [image, setImage] = useState(aws_image_urls[0]);
     const [title, setTitle] = useState(image_titles[0]);
@@ -26,7 +28,7 @@ function Homepage() {
                 setButtonText(button_texts[newIndex]);
                 return aws_image_urls[newIndex];
             });
-        }, 1000000);
+        }, 100000);
 
         return () => {
             clearInterval(timer);
@@ -34,9 +36,11 @@ function Homepage() {
     }, [aws_image_urls, image_titles, button_texts]);
 
     return (
-        <div className='homepage-wrapper' style={{ backgroundImage: `url(${image})` }}> 
-            <h2>{title}</h2>
-            <button>{buttonText}</button>
+        <div className='homepage-wrapper' style={{ backgroundImage: `url(${image})` }}>
+            <div className='splash-text-button-container'>
+                <h2 className='splash-text'>{title}</h2>
+                <button className='splash-button'><FiSearch size={24}/>{buttonText}</button>
+            </div>
         </div>
     );
 }

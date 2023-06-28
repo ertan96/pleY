@@ -8,5 +8,37 @@
     z-index: 1;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center; */
+
+}
+
+.splash-text-button-container {
+    position: absolute; 
+    top: 25%; 
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.splash-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin-bottom: 6%;
+}
+
+.splash-button {
+    color: white;
+    background-color: rgb(224,7,7);
+    width: 189px;
+    height: 48px;
+    border-radius: 4px;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: bold;
 }
