@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
@@ -13,6 +13,10 @@ function SignupFormPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
+
+  const signupLoginPhoto = useMemo(() => [
+    'https://pley1-seeds.s3.us-west-1.amazonaws.com/login-photo.png'
+  ],[]);
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -37,6 +41,8 @@ function SignupFormPage() {
     }
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
+
+  
 
   return (
     <div className='login-container'>
@@ -67,6 +73,7 @@ function SignupFormPage() {
                 value={lastNameInitial}
                 onChange={(e) => setLastNameInitial(e.target.value)}
                 required
+                maxLength={1}
               />
             </label>
           </div>
@@ -105,6 +112,10 @@ function SignupFormPage() {
             <h2>Already on Yelp? <Link to='login' className='sign-up-button'>Log in</Link></h2>
           </div>
         </form>
+      </div>
+      <div className='login-photo-container'
+        style={{ backgroundImage: `url(${signupLoginPhoto[0]})`}}
+        >
       </div>
     </div>
   );

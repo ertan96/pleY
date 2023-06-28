@@ -24,7 +24,7 @@ function BusinessShowPage() {
     const dispatch = useDispatch();
     const { id } = useParams();
     const business = useSelector(state => state.businesses[id]);
-    const reviews = useSelector(getReviews);
+    const reviews = useSelector(state => state.reviews);
 
     useEffect(() => {
         dispatch(fetchBusiness(id));
@@ -48,7 +48,8 @@ function BusinessShowPage() {
             backgroundRepeat: 'repeat'
         };
 
-        const averageRating = calculateAverageRating(reviews);
+        const reviewsForBusiness = Object.values(reviews).filter(review => review.business_id === parseInt(id));
+        const averageRating = calculateAverageRating(reviewsForBusiness);
 
         return (
             <div className='business-page'>

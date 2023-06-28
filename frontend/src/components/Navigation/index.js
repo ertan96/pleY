@@ -18,12 +18,14 @@ function Navigation() {
       </div>
     );
   } else {
-    sessionLinks = (
-      <div className='login-signup'>
-        <NavLink to="/login" className='nav-login-button'>Log In</NavLink>
-        <NavLink to="/signup" className='nav-signup-button'>Sign Up</NavLink>
-      </div>
-    );
+    if (location.pathname !== "/login" && location.pathname !== "/signup") {
+      sessionLinks = (
+        <div className='login-signup'>
+          <NavLink to="/login" className='nav-login-button'>Log In</NavLink>
+          <NavLink to="/signup" className='nav-signup-button'>Sign Up</NavLink>
+        </div>
+      );
+    }
   }
 
   return (

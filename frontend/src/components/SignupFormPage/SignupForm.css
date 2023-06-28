@@ -1,3 +1,7 @@
+.login-container {
+    gap: 5%;
+}
+
 .first-name-text input {
     border: 1px solid rgb(145, 140, 140);
     padding: 5px 9px;
@@ -10,7 +14,7 @@
 .last-name-text input {
     border: 1px solid rgb(145, 140, 140);
     padding: 5px 9px;
-    width: 127px;
+    width: 145px;
     margin-bottom: 9px;
     border-radius: 3px;
     margin-left: 3px;
@@ -22,4 +26,12 @@
     width: 280px;
     margin-bottom: 9px;
     border-radius: 3px;
+}
+
+.login-photo-container {
+    width: 382px;
+    height: 342px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

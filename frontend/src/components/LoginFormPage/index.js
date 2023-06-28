@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Link } from "react-router-dom";
@@ -12,6 +12,10 @@ function LoginFormPage() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
   const formRef = React.useRef(null);
+
+  const signupLoginPhoto = useMemo(() => [
+    'https://pley1-seeds.s3.us-west-1.amazonaws.com/login-photo.png'
+  ],[]);
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -89,6 +93,10 @@ function LoginFormPage() {
               <h2>New to Yelp? <Link to='signup' className='sign-up-button'>Sign Up</Link></h2>
             </div>
           </form>
+      </div>
+      <div className='login-photo-container'
+        style={{ backgroundImage: `url(${signupLoginPhoto[0]})`}}
+        >
       </div>
     </div>
   );
