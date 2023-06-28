@@ -3,12 +3,12 @@ class Api::ReviewsController < ApplicationController
 
     def index
         @reviews = Review.all
-        render json: @reviews, methods: [:user_info]
+        render json: @reviews, methods: [:user_info, :business_name]
     end
 
     def show
         @review = Review.find(params[:id])
-        render json: @review, methods: [:user_info]
+        render json: @review, methods: [:user_info, :business_name]
     end
 
     def create

@@ -4,6 +4,7 @@ json.array! @reviews do |review|
     json.extract! review, :id, :body, :rating, :user_id, :business_id
 
     json.user @review.user_info
+    json.business @review.business_name
 
     json.business do
         json.extract! review.business, :id, :name, :address

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import './Homepage.css';
 import { FiSearch } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBusinesses } from '../../store/businesses';
 import { fetchReviews } from '../../store/reviews';
 
 
@@ -32,7 +31,6 @@ function Homepage() {
     const reviews = useSelector(state => state.reviews); 
     const reviewsArray = Object.values(reviews);
     const twelveReviews = reviewsArray.slice(0, 12);
-    const businesses = useSelector(state => state.businesses);
 
 
     // const [imageIndex, setImageIndex] = useState(0);
@@ -49,7 +47,6 @@ function Homepage() {
 
     useEffect(() => {
         dispatch(fetchReviews());
-        dispatch(fetchBusinesses());
     }, [dispatch])
 
     return (
@@ -76,8 +73,8 @@ function Homepage() {
                 <div className='grid-container'>
                 {twelveReviews.map((review, i) => (
                     <div key={i} className='review-box'>
-                        <div className='review-user-name'>{review.userName}</div>
-                        <div className='review-business-name'>{review.businessName}</div>
+                        <div className='review-user-name'>{review.user_info}</div>
+                        <div className='review-business-name'>{review.business_name}</div>
                         <div className='review-rating'>{review.rating}</div>
                         <div className='review-body'>{review.body}</div>
                     </div>
