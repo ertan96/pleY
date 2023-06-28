@@ -8,12 +8,25 @@
     z-index: 1;
     background-repeat: no-repeat;
     background-size: cover;
+}
 
+.splash-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.splash-image.active {
+    opacity: 1;
 }
 
 .splash-text-button-container {
-    position: absolute; 
-    top: 25%; 
+    position: absolute;
+    top: 25%;
     left: 20%;
     display: flex;
     flex-direction: column;
@@ -23,13 +36,13 @@
     font-size: 48px;
     font-weight: bold;
     color: white;
-    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin-bottom: 6%;
 }
 
 .splash-button {
     color: white;
-    background-color: rgb(224,7,7);
+    background-color: rgb(224, 7, 7);
     width: 189px;
     height: 48px;
     border-radius: 4px;
@@ -39,6 +52,6 @@
     justify-content: center;
     gap: 10px;
     font-size: 16px;
-    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: bold;
 }
