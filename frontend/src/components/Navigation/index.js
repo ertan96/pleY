@@ -33,7 +33,9 @@ function Navigation() {
   return (
     <ul>
       <li>
-        <div className='nav-container'>
+        <div className='nav-container'
+          style={location.pathname !== '/' ? {borderBottom: '1px solid rgba(0, 0, 0, 0.1)'} : {}}
+        >
           <div className='home-button'>
             <NavLink exact to="/" className='font-logo-link'>
               {location.pathname === '/' ? (
