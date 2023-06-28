@@ -21,7 +21,9 @@ function Navigation() {
     if (location.pathname !== "/login" && location.pathname !== "/signup") {
       sessionLinks = (
         <div className='login-signup'>
-          <NavLink to="/login" className='nav-login-button'>Log In</NavLink>
+          <NavLink to="/login" 
+            className={`nav-login-button ${location.pathname !== '/' ? 'nav-login-button-style' : ''}`}>
+              Log In</NavLink>
           <NavLink to="/signup" className='nav-signup-button'>Sign Up</NavLink>
         </div>
       );

@@ -160,3 +160,15 @@
 .homepage-logo {
   color: rgb(255,26,26);
 }
+
+.nav-login-button-style {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: black;
+    font-weight: 600;
+}
+
+.nav-login-button-style:hover {
+  color: black;
+  background-color: rgb(220, 220, 220);
+  
+}

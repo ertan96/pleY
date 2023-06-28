@@ -39,7 +39,7 @@ function BusinessShowPage() {
         const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
         return Math.round(totalRating / reviews.length);
     }
-
+    console.log(reviews.length)
     if (business) {
         const headerStyle = {
             backgroundImage: `url(${business.photoUrl})`,
@@ -57,7 +57,7 @@ function BusinessShowPage() {
                     <div className='business-header-content'>
                         <h1>{business.name}</h1>
                         <h2 className='business-review-header'>
-                            <StarRating className='star-icon' rating={averageRating}/> {reviews.length} Reviews</h2>
+                            <StarRating className='star-icon' rating={averageRating}/> {reviewsForBusiness.length} Reviews</h2>
                         <h2 className='claimed-row'>
                             <span className='claimed-style'>
                                 <BsFillCheckCircleFill /> Claimed  
