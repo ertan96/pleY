@@ -41,7 +41,6 @@ function BusinessIndex() {
             reviewCount: relevantReviews.length,
         };
     }
-    console.log('none')
     return (
         <div className="business-list">
             {Object.keys(businesses).length > 0 ? (

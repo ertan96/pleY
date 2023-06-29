@@ -40,7 +40,7 @@ function BusinessShowPage() {
         const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
         return Math.round(totalRating / reviews.length);
     }
-    console.log(reviews.length)
+    
     if (business) {
         const headerStyle = {
             backgroundImage: `url(${business.photoUrl})`,
