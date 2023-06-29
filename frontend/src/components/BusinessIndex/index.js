@@ -57,12 +57,17 @@ function BusinessIndex() {
                             <ul>
                                 {sortedBusinessesArray.map((business, index) => {
                                     let firstReviewText = 'No reviews yet.';
+                                    let latestReviewId = null;
                                     for (let reviewId in reviews){
                                         if (reviews[reviewId].business_id === business.id){
-                                            firstReviewText = reviews[reviewId].body.length < 100
-                                            ? reviews[reviewId.body]
-                                            : `"${reviews[reviewId].body.substring(0, 100)}..."`;
-                                            break;
+                                            if (latestReviewId === null || reviews[reviewId].id > latestReviewId) {
+                                                latestReviewId = reviews[reviewId].id;
+                                                if (reviews[reviewId].body.length < 100) {
+                                                    firstReviewText = reviews[reviewId].body;
+                                                } else {
+                                                    firstReviewText = `"${reviews[reviewId].body.substring(0, 100)}..."`;
+                                                }
+                                            }
                                         }
                                     }
                                     const businessStats = businessAverage(business.id)

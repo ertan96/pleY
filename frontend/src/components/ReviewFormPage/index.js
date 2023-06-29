@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createReview, updateReview, fetchReview } from '../../store/reviews';
 import { useParams } from 'react-router-dom';
 import { StarInput } from '../StarRating';
+import { fetchBusiness } from '../../store/businesses';
 
 function ReviewFormPage({ history }) {
     const dispatch = useDispatch();
     const { reviewId, businessId } = useParams();
     const review = useSelector(state => state.reviews[reviewId]);
+    const business = useSelector(state => state.businesses[businessId]);
+
 
     const [rating, setRating] = useState(review ? review.rating : '');
     const [body, setBody] = useState(review ? review.body : '');
@@ -18,8 +21,10 @@ function ReviewFormPage({ history }) {
     useEffect(() => {
         if (reviewId) {
             dispatch(fetchReview(reviewId));
+        } else if (businessId) {
+            dispatch(fetchBusiness(businessId))
         }
-    }, [dispatch, reviewId]);
+    }, [dispatch, reviewId, businessId]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -61,7 +66,8 @@ function ReviewFormPage({ history }) {
         <div>
             
             <form onSubmit={handleSubmit}>
-                <label>Rating:
+                <div>{review ? review.business_name : business.name}</div>
+                <label>
                     <StarInput
                         rating={rating}
                         setRating={setRating}

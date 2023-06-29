@@ -8,7 +8,6 @@ async function csrfFetch(url, options = {}) {
     // "application/json" and the "X-CSRF-Token" header to the value of the 
     // "X-CSRF-Token" cookie
     if (options.method.toUpperCase() !== 'GET') {
-        console.log('CSRF token:', sessionStorage.getItem('X-CSRF-Token'));
         options.headers['Content-Type'] =
         options.headers['Content-Type'] || 'application/json';
         options.headers['X-CSRF-Token'] = sessionStorage.getItem('X-CSRF-Token');
