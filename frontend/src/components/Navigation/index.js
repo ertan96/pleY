@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import SearchBar from '../SearchBar';
 import './Navigation.css';
-import { BsYelp } from "react-icons/bs";
+import { BsYelp, BsGithub, BsLinkedin } from "react-icons/bs";
 
 function Navigation() {
   const location = useLocation();
@@ -45,8 +45,26 @@ function Navigation() {
               )}
               </NavLink>
           </div>
-          <div>
+          <div className='searchbar-style'>
             <SearchBar searchTerm={word => console.log(word)}/>
+          </div>
+          <div className='about-links'>
+            <div className='github-link'>
+              <a href="https://github.com/ertan96/pleY"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BsGithub size={36} />
+              </a>
+            </div>
+            <div className='linkedin-link'>
+              <a href="https://www.linkedin.com/in/ernest-tan3/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              <BsLinkedin size={36} />
+              </a>
+            </div>
           </div>
           {sessionLinks}
         </div>

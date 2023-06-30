@@ -168,6 +168,22 @@
 
 .nav-login-button-style:hover {
   color: black;
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(220, 220, 220); 
+}
+
+.searchbar-style {
+  margin-left: 12%;
+}
+
+.about-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 10px;
   
 }
+
+.about-links a {
+  color: gray
+}
+
