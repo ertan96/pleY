@@ -31,6 +31,7 @@ const SearchBar = ({searchTerm}) => {
                     value={searchInput}
                     placeholder='Japanese, Vietnamese, American'
                     onChange={e => setSearchInput(e.target.value)}
+                    required
                 />
                 <button type='submit' className='fisearch-button'><FiSearch size={24}/></button>
             </div>

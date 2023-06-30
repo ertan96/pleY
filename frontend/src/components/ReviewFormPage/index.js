@@ -4,6 +4,7 @@ import { createReview, updateReview, fetchReview } from '../../store/reviews';
 import { useParams } from 'react-router-dom';
 import { StarInput } from '../StarRating';
 import { fetchBusiness } from '../../store/businesses';
+import './ReviewFormPage.css';
 
 function ReviewFormPage({ history }) {
     const dispatch = useDispatch();
@@ -63,26 +64,31 @@ function ReviewFormPage({ history }) {
     };
 
     return (
-        <div>
-            
+        <div className='review-form-container'>
             <form onSubmit={handleSubmit}>
-                <div>{review ? review.business_name : business.name}</div>
-                <label>
-                    <StarInput
-                        rating={rating}
-                        setRating={setRating}
-                    />
-                </label>
-                <label>Review:
-                    <textarea
-                        value={body}
-                        onChange={(e) => setBody(e.target.value)}
-                    />
-                </label>
-                {!isLoggedIn && <h2>You must be logged in to make a review.</h2>}
-                <button type="submit">Submit</button>
+                <div className='review-form-contents'>
+                    <div className='review-form-business-name'>{review ? review.business_name : business.name}</div>
+                    <div className='text-area-container'>
+                        <div className='rating-text-row'>
+                            <StarInput
+                                rating={rating}
+                                setRating={setRating}
+                            /> <span className='select-row'>Select your rating</span>
+                        </div>
+                        <div className='text-area-box'>
+                            <textarea
+                                value={body}
+                                maxLength='800'
+                                onChange={(e) => setBody(e.target.value)}
+                                className='text-area-style'
+                                placeholder="I was so impressed with the level of service at this store. The staff was friendly and helpful, and I got exactly what I wanted. I'll be back!"
+                            />
+                        </div>
+                    </div>
+                    {!isLoggedIn && <h2>You must be logged in to make a review.</h2>}
+                    <button type="submit" className='review-form-button'>Post Review</button>
+                </div>
             </form>
-            
         </div>
     );
 }

@@ -15,7 +15,7 @@
 .filter-dollars {
     display: flex;
     flex-direction: row;
-    margin: 10px 10px;
+    margin: 0 10px;
 }
 
 .filter-dollars > button {
@@ -50,7 +50,7 @@
 }
 
 .filter-bottom-half {
-    margin: 20px 10px;
+    margin: 15px 10px;
     font-size: 14px;
 }
 
