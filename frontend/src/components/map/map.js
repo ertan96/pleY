@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 import './map.css';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ const MapContainer = ({businesses}) => {
     };
 
     return (
-        <LoadScript googleMapsApiKey={process.env.REACT_APP_MAPS_API_KEY}>
+        
             <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter} mapContainerClassName='map-container'>
                 {businesses.map((business, index) => {
                 return (
@@ -48,8 +48,8 @@ const MapContainer = ({businesses}) => {
                 );
                 })}
             </GoogleMap>
-        </LoadScript>
+        
     );
-    };
+};
 
 export default MapContainer;

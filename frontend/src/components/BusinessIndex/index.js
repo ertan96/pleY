@@ -73,7 +73,7 @@ function BusinessIndex() {
                                     return (
                                         <Link key={business.id} to={`/businesses/${business.id}`} style={{textDecoration: 'none'}}>
                                             <div className='business-each'>
-                                                <li key={business.id}>
+                                                <li>
                                                     <div className='business-each-box'>
                                                         <div className='business-photo'>
                                                             {business.photosUrls && business.photosUrls.length > 0 && 

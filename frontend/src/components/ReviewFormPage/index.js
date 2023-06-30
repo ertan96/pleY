@@ -25,7 +25,7 @@ function ReviewFormPage({ history }) {
         } else if (businessId) {
             dispatch(fetchBusiness(businessId))
         }
-    }, [dispatch, reviewId, businessId]);
+    }, [dispatch, reviewId, businessId, review, business]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -67,7 +67,7 @@ function ReviewFormPage({ history }) {
         <div className='review-form-container'>
             <form onSubmit={handleSubmit}>
                 <div className='review-form-contents'>
-                    <div className='review-form-business-name'>{review ? review.business_name : business.name}</div>
+                    <div className='review-form-business-name'>{review ? review.business_name : business?.name}</div>
                     <div className='text-area-container'>
                         <div className='rating-text-row'>
                             <StarInput

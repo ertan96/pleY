@@ -1,6 +1,8 @@
 export const RECEIVE_BUSINESSES = 'businesses/RECEIVE_BUSINESSES';
 export const RECEIVE_BUSINESS = 'businesses/RECEIVE_BUSINESS';
 export const RECEIVE_SEARCH_RESULTS = 'businesses/RECEIVE_SEARCH_RESULTS';
+export const RESET_BUSINESSES = 'businesses/RESET_BUSINESSES';
+
 
 const receiveBusinesses = businesses => ({
     type: RECEIVE_BUSINESSES,
@@ -16,6 +18,10 @@ const receiveSearchResults = results => ({
     type: RECEIVE_SEARCH_RESULTS,
     results
 })
+
+const resetBusinesses = () => ({
+    type: RESET_BUSINESSES
+});
 
 export const getBusiness = businessId => state => {
     return state?.businesses ? state.businesses[businessId] : null;
@@ -34,9 +40,11 @@ export const fetchBusinesses = () => async (dispatch) => {
     }
 };
 
-export const fetchBusiness = businessId => async (dispatch) => {
-    const response = await fetch(`/api/businesses/${businessId}`);
+export const fetchBusiness = businessId => async (dispatch, getState) => {
+    const existingBusiness = getBusiness(businessId)(getState());
+    if (existingBusiness) return;
 
+    const response = await fetch(`/api/businesses/${businessId}`);
     if (response.ok) {
         const business = await response.json();
         dispatch(receiveBusiness(business));
@@ -56,14 +64,20 @@ export const fetchSearch = term => async (dispatch) => {
     }
 }
 
+export const clearBusinesses = () => dispatch => {
+    dispatch(resetBusinesses());
+};
+
 const businessesReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_SEARCH_RESULTS:
             return { ...action.results};
         case RECEIVE_BUSINESSES:
-            return { ...state, ...action.businesses };
+            return { ...action.businesses };
         case RECEIVE_BUSINESS:
             return { ...state, [action.business.id]: action.business };
+        case RESET_BUSINESSES:
+            return {};
         default:
             return state;
     }

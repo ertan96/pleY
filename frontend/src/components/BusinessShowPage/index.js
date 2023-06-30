@@ -4,8 +4,8 @@ import './BusinessShowPage.css';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { AiOutlineStar } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBusiness} from '../../store/businesses';
-import { fetchReviews, getReviews } from '../../store/reviews';
+import { fetchBusiness, clearBusinesses } from '../../store/businesses';
+import { fetchReviews} from '../../store/reviews';
 import { Link } from 'react-router-dom';
 import ReviewShow from '../ReviewShow';
 import { StarRating } from '../StarRating';
@@ -31,6 +31,12 @@ function BusinessShowPage() {
         dispatch(fetchBusiness(id));
         dispatch(fetchReviews());
     }, [dispatch, id]);
+
+    useEffect(() => {
+        return () => {
+            dispatch(clearBusinesses());
+        };
+    }, [dispatch]);
 
     const calculateAverageRating = (reviews) => {
         if (reviews.length === 0) {
