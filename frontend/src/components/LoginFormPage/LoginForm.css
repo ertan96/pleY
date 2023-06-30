@@ -169,3 +169,20 @@
     text-decoration: underline;
 }
 
+.login-errors {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    max-width: 280px;
+}
+
+.login-errors li {
+    margin-bottom: 5px;
+    color: red;
+    padding-left: 10px;
+}
+
+.login-errors li::after {
+    white-space: pre;
+}

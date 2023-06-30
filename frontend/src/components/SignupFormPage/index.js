@@ -41,7 +41,7 @@ function SignupFormPage() {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
-  
+  console.log(errors)
 
   return (
     <div className='login-container'>
@@ -52,9 +52,6 @@ function SignupFormPage() {
             By continuing, you agree to Yelp's <span className="terms-of-service">Terms of Service</span> and acknowledge Yelp's <span className='privacy-policy'>Privacy Policy.</span>
           </h3>
         <form onSubmit={handleSubmit}>
-          <ul className='login-errors'>
-            {errors.map((error) => <li key={error}>{error}</li>)}
-          </ul>
           <div>
             <label className='first-name-text'>
               <input
@@ -110,6 +107,13 @@ function SignupFormPage() {
           <div className='sign-up'>
             <h2>Already on Yelp? <Link to='login' className='sign-up-button'>Log in</Link></h2>
           </div>
+          <ul className="login-errors">
+            {errors.flat().map((error, index) => (
+              <li key={index}>
+                <div>{error}</div>
+              </li>
+            ))}
+          </ul>
         </form>
       </div>
       <div className='login-photo-container'

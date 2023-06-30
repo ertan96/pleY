@@ -62,9 +62,6 @@ function LoginFormPage() {
             By continuing, you agree to Yelp's <span className="terms-of-service">Terms of Service</span> and acknowledge Yelp's <span className='privacy-policy'>Privacy Policy.</span>
           </h3>
           <form onSubmit={handleSubmit} ref={formRef}>
-            <ul className='login-errors'>
-                {errors.map(error => <li key={error}>{error} </li>)}
-            </ul>
             <label className='email-text'>
                 <input
                 type="text"
@@ -91,6 +88,9 @@ function LoginFormPage() {
             <div className='sign-up'>
               <h2>New to Yelp? <Link to='signup' className='sign-up-button'>Sign Up</Link></h2>
             </div>
+            <ul className='login-errors'>
+                {errors.map(error => <li key={error}>{error} </li>)}
+            </ul>
           </form>
       </div>
       <div className='login-photo-container'
