@@ -1,6 +1,6 @@
 # Welcome to pleY
 
-Here is the [Live Site Link]([url](https://pley-0eb1.onrender.com)), check it out!
+Here is the [Live Site Link](https://pley-0eb1.onrender.com), check it out!
 
 # Background
 
