@@ -29,7 +29,7 @@ const SearchBar = ({searchTerm}) => {
                 <input className='search-text-box'
                     type='text'
                     value={searchInput}
-                    placeholder='Japanese, Vietnamese, American'
+                    placeholder='American, Japanese, Vietnamese, Chinese'
                     onChange={e => setSearchInput(e.target.value)}
                     required
                 />
