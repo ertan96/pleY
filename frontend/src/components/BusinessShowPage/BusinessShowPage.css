@@ -87,10 +87,35 @@
     position: sticky;
     top: 162px;
     margin-top: 24px;
-    padding-left: 16px;
     width: 365px;
-    height: 100px;
+    height: 200px;
     border: 1px solid black;
+}
+
+.contact-container {
+    border: 1px solid rgb(255, 0, 0);
+    margin: 20px 20px;
+}
+
+.contact-text {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 3px solid green;
+}
+
+.title-text {
+    border: 2px solid sandybrown;
+    padding: 20px 0;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-links a {
+    text-decoration: none;
 }
 
 .top-location {

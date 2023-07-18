@@ -125,13 +125,18 @@ function BusinessShowPage() {
                             </div>
                         </div>
                     </div>
-                    <div className ='right-bot-half'>
-                        <h2>Contact Me</h2>
-                        <h3>Full Stack Software Engineer</h3>
-                        <a href="https://www.linkedin.com/in/ernest-tan3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://github.com/ertan96" target="_blank" rel="noopener noreferrer">Github</a>
-                        <a href="https://wellfound.com/u/ernest-tan-6" target="_blank" rel="noopener noreferrer">Wellfound</a>
-                        <a href="https://pley1-seeds.s3.us-west-1.amazonaws.com/resume+aA+v4.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">Resume</a>
+                    <div className='right-bot-half'>
+                        <div className='contact-container'>
+                            <h2 className='contact-text'>Contact Me</h2>
+                            <h3 className='title-text'>Full Stack Software Engineer</h3>
+                            <div className='contact-links'>
+                                <a href="https://www.linkedin.com/in/ernest-tan3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                <a href="https://github.com/ertan96" target="_blank" rel="noopener noreferrer">Github</a>
+                                <a href="https://wellfound.com/u/ernest-tan-6" target="_blank" rel="noopener noreferrer">Wellfound</a>
+                            </div>
+                                <a href="https://pley1-seeds.s3.us-west-1.amazonaws.com/resume+aA+v4.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">Resume</a>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
