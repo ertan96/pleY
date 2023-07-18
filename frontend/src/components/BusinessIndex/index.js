@@ -46,9 +46,6 @@ function BusinessIndex() {
             {Object.keys(businesses).length > 0 ? (
                 <>
                     <div className='business-index-container'>
-                        <div>
-                            <Filters/>
-                        </div>
                         <div className='left-container'>
                             <h1 className='left-header-text'>
                                 {term ? `All "${term}" results in San Francisco, California` : "All results in San Francisco, California"}

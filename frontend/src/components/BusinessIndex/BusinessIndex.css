@@ -160,7 +160,7 @@
 .map-sticky {
     position: sticky;
     overflow: auto;
-    width: 36%;
+    width: 50%;
     height: 100%;
     top: 0;
 }
