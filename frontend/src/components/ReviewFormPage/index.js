@@ -11,6 +11,7 @@ function ReviewFormPage({ history }) {
     const { reviewId, businessId } = useParams();
     const review = useSelector(state => state.reviews[reviewId]);
     const business = useSelector(state => state.businesses[businessId]);
+    const [errors, setErrors] = useState([]);
 
 
     const [rating, setRating] = useState(review ? review.rating : '');
@@ -30,9 +31,23 @@ function ReviewFormPage({ history }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        let errors = [];
+
+        if (!rating) {
+            errors.push("Rating is required");
+        }
+
+        if (!body) {
+            errors.push("Review is required");
+        }
+
         if (!isLoggedIn) {
-            console.log('User is not logged in');
-        return;
+            errors.push("You must be logged in to make a review.")
+        }
+
+        if (errors.length) {
+            setErrors(errors);
+            return;
         }
 
         const reviewData = {
@@ -47,18 +62,20 @@ function ReviewFormPage({ history }) {
                 .then(updatedReview => {
                     dispatch(fetchReview(updatedReview.id));
                     history.push(`/businesses/${review.business_id}`);
+                    setErrors([]);
                 })
                 .catch(error => {
-                    console.log(error);
+                    setErrors([error.message]);
                 });
         } else {
             dispatch(createReview(reviewData))
                 .then(createdReview => {
                     dispatch(fetchReview(createdReview.id));
                     history.push(`/businesses/${businessId}`);
+                    setErrors([]); 
                 })
                 .catch(error => {
-                    console.log(error);
+                    setErrors([error.message]);
                 });
         }
     };
@@ -85,7 +102,9 @@ function ReviewFormPage({ history }) {
                             />
                         </div>
                     </div>
-                    {!isLoggedIn && <h2>You must be logged in to make a review.</h2>}
+                    {errors.map((error, idx) => (
+                        <div key={idx}>{error}</div>
+                    ))}
                     <button type="submit" className='review-form-button'>Post Review</button>
                 </div>
             </form>

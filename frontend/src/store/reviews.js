@@ -58,6 +58,9 @@ export const createReview = review => async (dispatch) => {
         const review = await response.json();
         dispatch(receiveReview(review));
         return review;
+    } else {
+        const error = await response.json();
+        throw error;
     }
 };
 
@@ -74,6 +77,9 @@ export const updateReview = review => async (dispatch) => {
         const review = await response.json();
         dispatch(receiveReview(review));
         return review;
+    } else {
+        const error = await response.json();
+        throw error;
     }
 };
 
