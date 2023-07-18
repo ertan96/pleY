@@ -69,3 +69,8 @@
 .review-form-button:hover {
     cursor: pointer;
 }
+
+.review-errors {
+    color: red;
+    margin-top: 10px;
+}

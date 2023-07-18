@@ -103,7 +103,7 @@ function ReviewFormPage({ history }) {
                         </div>
                     </div>
                     {errors.map((error, idx) => (
-                        <div key={idx}>{error}</div>
+                        <div key={idx} className='review-errors'>{error}</div>
                     ))}
                     <button type="submit" className='review-form-button'>Post Review</button>
                 </div>
