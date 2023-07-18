@@ -134,8 +134,9 @@ function BusinessShowPage() {
                                 <a href="https://github.com/ertan96" target="_blank" rel="noopener noreferrer">Github</a>
                                 <a href="https://wellfound.com/u/ernest-tan-6" target="_blank" rel="noopener noreferrer">Wellfound</a>
                             </div>
+                            <div className='resume-link'>
                                 <a href="https://pley1-seeds.s3.us-west-1.amazonaws.com/resume+aA+v4.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">Resume</a>
-                            
+                            </div>
                         </div>
                     </div>
                 </div>

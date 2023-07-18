@@ -88,7 +88,7 @@
     top: 162px;
     margin-top: 24px;
     width: 365px;
-    height: 200px;
+    height: 230px;
     border: 1px solid black;
 }
 
@@ -116,6 +116,37 @@
 
 .contact-links a {
     text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+}
+
+.contact-links a:hover {
+    border-bottom: 3px solid red;
+}
+
+.resume-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 7, 7);
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.resume-link a {
+    text-decoration: none;
+    color: white;
+}
+
+.resume-link:hover {
+    filter: brightness(1.1);
 }
 
 .top-location {
