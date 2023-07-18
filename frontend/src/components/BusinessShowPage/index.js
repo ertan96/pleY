@@ -127,6 +127,10 @@ function BusinessShowPage() {
                     </div>
                     <div className ='right-bot-half'>
                         <h2>Contact Me</h2>
+                        <h3>Full Stack Software Engineer</h3>
+                        <a href="https://www.linkedin.com/in/ernest-tan3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/ertan96" target="_blank" rel="noopener noreferrer">Github</a>
+                        <a href="https://wellfound.com/u/ernest-tan-6" target="_blank" rel="noopener noreferrer">Wellfound</a>
                     </div>
                 </div>
             </div>
