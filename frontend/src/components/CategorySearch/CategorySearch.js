@@ -36,11 +36,11 @@ const CategorySearch = () => {
                     <Link to={`/search/Japanese`}>
                         <h1>Japanese</h1>
                     </Link>
-                    <Link to={`/search/Viet`}>
-                        <h1>Viet</h1>
-                    </Link>
                     <Link to={`/search/Chinese`}>
                         <h1>Chinese</h1>
+                    </Link>
+                    <Link to={`/search/Vietnamese`}>
+                        <h1>Vietnamese</h1>
                     </Link>
                     </div>
                 )}

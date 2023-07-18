@@ -88,7 +88,7 @@ function BusinessIndex() {
                                                             <h2 className='open-row'><span className='green-open-2'>Open</span>until 9:00 PM</h2>
                                                             <div className='review-preview-container'>
                                                                 <h2 className='text-icon'><BiMessage/></h2>
-                                                                <h2 className='review-preview-text'>{firstReviewText} <span className='more-text'> more</span></h2>
+                                                                <h2 className='review-preview-text'>{firstReviewText} <span className='more-text'> See more reviews</span></h2>
                                                             </div>
                                                         </div>
                                                     </div>
