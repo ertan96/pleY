@@ -6,6 +6,7 @@ import SearchBar from '../SearchBar';
 import './Navigation.css';
 import { BsYelp, BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaAngellist } from "react-icons/fa";
+import CategorySearch from '../CategorySearch/CategorySearch';
 
 function Navigation() {
   const location = useLocation();
@@ -49,6 +50,7 @@ function Navigation() {
           <div className='searchbar-style'>
             <SearchBar searchTerm={word => console.log(word)}/>
           </div>
+          <CategorySearch/>
           <div className='about-links'>
             <div className='github-link'>
               <a href="https://github.com/ertan96/pleY"
