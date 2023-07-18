@@ -54,7 +54,7 @@ function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsGithub size={36} />
+                <BsGithub size={40} />
               </a>
             </div>
             <div className='linkedin-link'>
@@ -62,7 +62,7 @@ function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <BsLinkedin size={36} />
+              <BsLinkedin size={40} />
               </a>
             </div>
           </div>
