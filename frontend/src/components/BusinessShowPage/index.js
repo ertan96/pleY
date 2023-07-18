@@ -97,7 +97,6 @@ function BusinessShowPage() {
                         <div className='business-location'>
                             <div className='top-location'>
                                 <h2 className='location-hours'>Location & Hours</h2>
-                                <button className='suggest-edit'>Suggest an edit</button>
                             </div>
                             <div className='map-time-container'>
                                 <div className='map-address-left'>

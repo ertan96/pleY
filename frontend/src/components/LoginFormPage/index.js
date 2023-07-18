@@ -82,7 +82,6 @@ function LoginFormPage() {
                 />
             </label>
             <br/>
-            <button className='forgot-button' >Forgot password?</button>
             <button type="submit" className='login-button'>Log In</button>
             <button type='button' className='demo-login' onClick={handleDemoLogin}>Demo Login</button>
             <div className='sign-up'>

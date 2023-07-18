@@ -24,13 +24,6 @@ function Homepage() {
         'Tell pests to bug off'
     ], []);
 
-    const button_texts = useMemo(() => [
-        'Golf courses', 
-        'Oil change', 
-        'Pool service', 
-        'Pest control'
-    ],[]);
-
     const dispatch = useDispatch();
     const reviews = useSelector(state => state.reviews); 
     const reviewsArray = Object.values(reviews);
@@ -65,10 +58,6 @@ function Homepage() {
                 ))}
                 <div className="splash-text-button-container">
                     <h2 className="splash-text">{image_titles[imageIndex]}</h2>
-                    <button className="splash-button">
-                        <FiSearch size={24} />
-                        {button_texts[imageIndex]}
-                    </button>
                 </div>
             </div>
             <div className='homepage-bottom-wrapper'>
