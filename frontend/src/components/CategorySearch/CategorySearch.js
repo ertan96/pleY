@@ -30,16 +30,16 @@ const CategorySearch = () => {
                 </div>
                 {showMenu && (
                     <div className="categorySearch">
-                    <Link to={`/search/american`}>
+                    <Link to={`/search/American`}>
                         <h1>American</h1>
                     </Link>
-                    <Link to={`/search/japanese`}>
+                    <Link to={`/search/Japanese`}>
                         <h1>Japanese</h1>
                     </Link>
-                    <Link to={`/search/vietnamese`}>
-                        <h1>Vietnamese</h1>
+                    <Link to={`/search/Viet`}>
+                        <h1>Viet</h1>
                     </Link>
-                    <Link to={`/search/chinese`}>
+                    <Link to={`/search/Chinese`}>
                         <h1>Chinese</h1>
                     </Link>
                     </div>

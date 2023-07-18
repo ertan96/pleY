@@ -4,7 +4,7 @@
 }
 
 .res-category{
-    background-color: red;
+    background-color: rgb(224, 7, 7);
     color: white;
     border-radius: 8px;
     display: flex;
@@ -22,7 +22,7 @@
 
 .res-category:hover{
     cursor:pointer;
-    filter: brightness(1.2);
+    filter: brightness(1.1);
     transition: ease-in-out 0.2s;
 }
     
@@ -30,7 +30,6 @@
     font-size:16px;
     font-weight: bold;
     color:white;
-    text-shadow:px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .categorySearch {
@@ -41,7 +40,6 @@
     background-color: rgb(256,256,256);
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
     z-index:999;
-    border-bottom: var(--red);
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -52,6 +50,11 @@
 .categorySearch h1{
     font-size: 20px;
     color:black;
+    margin: 10px 10px;
+}
+
+.categorySearch a {
+    text-decoration: none;
 }
 
 .categorySearch a:hover {
