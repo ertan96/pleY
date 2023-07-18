@@ -122,14 +122,11 @@ function BusinessShowPage() {
                             <h2 className='header-all-reviews'>All Reviews</h2>
                             <div className='review-split'>
                                 <ReviewShow id={id}/>
-                                {/* <div>
-                                    <img src={business.photoUrl} alt="none"/>
-                                </div> */}
                             </div>
                         </div>
                     </div>
                     <div className ='right-bot-half'>
-                        <h2>floating scrolling area to put some stuff here</h2>
+                        <h2>Contact Me</h2>
                     </div>
                 </div>
             </div>

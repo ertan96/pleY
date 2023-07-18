@@ -90,8 +90,7 @@
     padding-left: 16px;
     width: 365px;
     height: 100px;
-    /* border: 1px solid black; */
-    color: white; /* remove when adding something */
+    border: 1px solid black;
 }
 
 .top-location {
