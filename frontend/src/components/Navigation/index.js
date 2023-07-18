@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import SearchBar from '../SearchBar';
 import './Navigation.css';
 import { BsYelp, BsGithub, BsLinkedin } from "react-icons/bs";
+import { FaAngellist } from "react-icons/fa";
 
 function Navigation() {
   const location = useLocation();
@@ -65,12 +66,12 @@ function Navigation() {
               <BsLinkedin size={40} />
               </a>
             </div>
-            <div className='linkedin-link'>
-              <a href="https://www.linkedin.com/in/ernest-tan3/"
+            <div className='wellfound-link'>
+              <a href="https://wellfound.com/u/ernest-tan-6"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <BsLinkedin size={40} />
+              <FaAngellist size={40} />
               </a>
             </div>
           </div>
