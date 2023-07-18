@@ -65,6 +65,14 @@ function Navigation() {
               <BsLinkedin size={40} />
               </a>
             </div>
+            <div className='linkedin-link'>
+              <a href="https://www.linkedin.com/in/ernest-tan3/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              <BsLinkedin size={40} />
+              </a>
+            </div>
           </div>
           {sessionLinks}
         </div>
