@@ -57,7 +57,7 @@ function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsGithub size={40} />
+                <BsGithub className='icon' size={40} />
               </a>
             </div>
             <div className='linkedin-link'>
@@ -65,7 +65,7 @@ function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <BsLinkedin size={40} />
+              <BsLinkedin className='icon' size={40} />
               </a>
             </div>
             <div className='wellfound-link'>
@@ -73,7 +73,7 @@ function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <FaAngellist size={40} />
+              <FaAngellist className='icon' size={40} />
               </a>
             </div>
           </div>
