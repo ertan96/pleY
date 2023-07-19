@@ -328,7 +328,7 @@ olivia = User.find_by(first_name: 'Olivia', last_name_initial: 'T')
 ben = User.find_by(first_name: 'Ben', last_name_initial: 'J')
 
 sushi_go_crazy = Business.find_by(name: 'Sushi Go Crazy')
-pho_200 = Business.find_by(name: 'Omakase')
+pho_200 = Business.find_by(name: 'Pho 200')
 sichuan_spice = Business.find_by(name: 'Sichuan Spice')
 johns_diner = Business.find_by(name: 'Johns Diner')
 
@@ -409,16 +409,5 @@ Review.create!(
 )
 
 puts "Created review!"
-
-# 9.times do
-#   Business.create!({
-#     name: Faker::Company.name,
-#     address: Faker::Address.street_address,
-#     latitude: Faker::Address.latitude,
-#     longitude: Faker::Address.longitude,
-#     category: Faker::Restaurant.type
-#   })
-# end
-
 
 puts "Done!"
