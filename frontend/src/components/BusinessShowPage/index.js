@@ -61,6 +61,7 @@ function BusinessShowPage() {
         return (
             <div className='business-page'>
                 <div className='business-header' style={headerStyle}>
+                    <div className='business-header-blur'> </div>
                     <div className='business-header-content'>
                         <h1>{business.name}</h1>
                         <h2 className='business-review-header'>
