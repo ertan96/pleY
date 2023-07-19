@@ -6,11 +6,20 @@
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
 }
 
+.business-header-blur {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
 .business-header-content {
     position: absolute;
     font-family: 'Rubik',"Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
-    top: 40%;
+    top: 45%;
     left: 20%;
     color: white;
     font-size: 48px;
@@ -288,3 +297,4 @@
     display: flex;
     gap: 5px;
 }
+
